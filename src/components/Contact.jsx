@@ -90,7 +90,7 @@ const ContactSection = () => {
     <>
       <div className="relative">
         {/* Background Image */}
-        <div className="absolute  left-300  rotate-50 top-10 bottom-100 inset-0 overflow-hidden z-0">
+        <div className="absolute  left-200 rotate-90 top-2 bottom-120 inset-0 overflow-hidden z-0">
           <img src={bg }alt="Background" className="w-auto h-auto object-cover" />
         </div>
 
