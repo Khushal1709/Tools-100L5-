@@ -127,7 +127,7 @@
 //                 <button className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center hover:bg-gray-50 cursor-pointer">
 //                   <Github size={20} />
 //                 </button>
-               
+              
 //               </div>
 //             </div>
 
@@ -189,13 +189,13 @@ export default function Login() {
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 py-12 relative z-10">
         {/* Left side with illustration */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center mb-8 md:mb-0 px-4">
-          <div className="text-purple-300 font-bold text-6xl md:text-8xl opacity-40 mb-4 select-none">
+          <div className="hidden md:flex text-purple-300 font-bold text-6xl md:text-7xl opacity-40 mb-4 select-none">
             WELCOME
           </div>
           <img
             src={login}
             alt="Illustration"
-            className="w-full max-w-sm md:max-w-md"
+            className="hidden md:flex w-full max-w-sm md:max-w-md"
           />
         </div>
 
@@ -210,6 +210,7 @@ export default function Login() {
           <div className="flex justify-center mb-6">
             <img src={logo} alt="Logo" className="h-10" />
           </div>
+          
 
           {/* Title */}
           <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">

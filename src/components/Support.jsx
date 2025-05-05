@@ -1,5 +1,6 @@
 import phone from "../image/phone.svg";
 import leaf from "../image/leafs.svg";
+import { Link } from "react-router-dom";
 
 const Support = () => {
     return (
@@ -39,9 +40,10 @@ const Support = () => {
                             placeholder="Enter your email address.."
                             className="flex-grow outline-none bg-transparent px-2 text-sm text-gray-700"
                         />
-                        <button className="bg-[#14143B] text-white px-5 py-2 rounded-full font-semibold text-sm">
+                        <Link to="/Signup"><button className="bg-[#14143B] text-white px-5 py-2 rounded-full font-semibold text-sm cursor-pointer">
                             Sign up
                         </button>
+                        </Link>
                     </div>
                 </div>
             </div>

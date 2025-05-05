@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Support from "./components/Support";
 import Contact from "./components/Contact";
+import Category from "./components/Category";
 // import Navbar from "./components/Navbar";
 
 
@@ -20,9 +21,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Support" element={<Support />} />
-
-
-
+          <Route path="/Category" element={<Category />} />
 
         </Routes>
         {/* <Footer /> */}
