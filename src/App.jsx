@@ -6,6 +6,12 @@ import Login from "./components/Login";
 import Support from "./components/Support";
 import Contact from "./components/Contact";
 import Category from "./components/Category";
+import Productfinder from "./components/Productfinder";
+import Productfinder1 from "./components/Productfinder1";
+
+
+
+
 // import Navbar from "./components/Navbar";
 
 
@@ -22,6 +28,10 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Support" element={<Support />} />
           <Route path="/Category" element={<Category />} />
+          <Route path="/Productfinder" element={<Productfinder />} />
+          <Route path="/Productfinder1" element={<Productfinder1 />} />
+
+
 
         </Routes>
         {/* <Footer /> */}

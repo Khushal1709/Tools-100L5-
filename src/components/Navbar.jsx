@@ -446,7 +446,7 @@ export default function Navbar() {
               </Link>
 
               <Link
-                to="#"
+                to="/Productfinder"
                 className="text-gray-700 hover:text-gray-900 flex items-center"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -569,7 +569,7 @@ export default function Navbar() {
               </div>
 
               <Link
-                to="/contact"
+                to="/Contact"
                 className="bg-[#00063F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors text-center mt-4"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -636,7 +636,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            to="#"
+            to="/Productfinder"
             className="text-gray-700 hover:text-gray-900 flex items-center"
           >
             Product Finder
@@ -743,7 +743,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            to="/contact"
+            to="/Contact"
             className="bg-[#00063F] text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-colors"
           >
             CONTACT US
