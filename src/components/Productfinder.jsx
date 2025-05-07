@@ -28,6 +28,8 @@ import Product1 from "../image/Product1.svg";
 import Support from "./Support";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ston from "../image/ston.svg";
+// import oval2 from "../image/Oval2";
 
 const ProductFinderHero = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -217,6 +219,17 @@ const ProductFinderHero = () => {
 
   return (
     <>
+    <div className="relative">
+      {/* Pink background that covers navbar */}
+      <div className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-280 " style={{ zIndex:1 }}>
+        <img
+          src={ston || "/placeholder.svg"}
+          alt="Background Shape"
+          className="w-full h-auto object-cover"
+        />
+        
+      </div>
+      
       <Navbar />
       <section className="w-full relative bg-white">
         <img
@@ -456,6 +469,7 @@ const ProductFinderHero = () => {
           </div>
         </Link>
       </section>
+      </div>
       <div className="max-w-7xl mx-auto p-2">
         <Support />
       </div>
