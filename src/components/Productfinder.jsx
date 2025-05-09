@@ -29,6 +29,7 @@ import Support from "./Support";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ston from "../image/ston.svg";
+import Oval2 from "../image/Oval2.svg";
 // import oval2 from "../image/Oval2";
 
 const ProductFinderHero = () => {
@@ -230,6 +231,7 @@ const ProductFinderHero = () => {
         
       </div>
       
+       
       <Navbar />
       <section className="w-full relative bg-white">
         <img

@@ -5,6 +5,13 @@ import oval from "../image/oval.svg"
 import flogo from "../image/flogo.svg"
 import leaffooter from "../image/leaffooter.svg"
 export default function Footer() {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    })
+  }
   return (
     <footer className="relative pt-12 pb-6 overflow-hidden">
       {/* Decorative image at bottom left */}
@@ -46,11 +53,13 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
               <div>
-                <img
+                <Link to="/"><img
                   src={flogo || "/placeholder.svg"}
                   alt="Footer Logo"
                   className=" rounded flex items-center justify-center mr-2"
+                  onClick={scrollToTop}
                 />
+                </Link>
               </div>
             </div>
             <p className="text-gray-600 mb-6">
@@ -98,23 +107,27 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="#"
+                  to="/"
                   className="text-gray-600 hover:text-indigo-600 transition-colors"
+                  onClick={scrollToTop}
                 >
                   Home
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/About"
+                  onClick={scrollToTop}
                   className="text-gray-600 hover:text-indigo-600 transition-colors"
                 >
                   About Us
+                 
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  to="/Contact"
+                  onClick={scrollToTop}
                   className="text-gray-600 hover:text-indigo-600 transition-colors"
                 >
                   Contact Us

@@ -16,8 +16,8 @@ const ContactSection = () => {
     <>
       <div className="relative ">
         {/* Background Image - Hidden on mobile/tablet, visible on lg screens */}
-        <div className="absolute hidden lg:block left-80 top-0 bottom-120 inset-0 overflow-hidden z-0 lg:left-0 2xl:left-80">
-          <img src={Oval2 || "/placeholder.svg"} alt="Background" className="w-auto h-auto object-cover " />
+        <div className="absolute hidden lg:block left-80 top-0 bottom-120 inset-0 overflow-hidden z-0 lg:left-0 2xl:right-100 ">
+          <img src={Oval2 || "/placeholder.svg"} alt="Background" className="w-150 h-auto object-cover " />
         </div>
         <div
           className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-280 "
@@ -32,7 +32,7 @@ const ContactSection = () => {
         <Navbar />
         <div className="relative z-10 max-w-7xl mx-auto p-2">
           {/* Top Contact Section */}
-          <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:py-8 lg:px-20 ">
+          <div className="flex flex-col lg:flex-row items-center justify-between px-6 lg:py-8  ">
             {/* Text Content */}
             <div className="max-w-xl space-y-6 mt-10">
               <h1 className="text-4xl font-david font-bold text-[#14143B]">
@@ -46,8 +46,8 @@ const ContactSection = () => {
 
               {/* Buttons */}
               <div className="flex gap-4 flex-wrap">
-                <div className="relative inline-flex items-center">
-                  <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-8 py-2 rounded-full shadow-md">
+                <div className="relative inline-flex items-center  ">
+                  <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-8 py-2 rounded-full shadow-md ">
                     EXPLORE TOOL
                   </button>
                   {/* Icon hidden on mobile/tablet, visible on lg screens */}
@@ -84,6 +84,7 @@ const ContactSection = () => {
                   </div>
                 </Link>
               </div>
+              
             </div>
 
             {/* Image */}

@@ -8,6 +8,7 @@ import Category from "./components/Category";
 import Productfinder from "./components/Productfinder";
 import Productfinder1 from "./components/Productfinder1";
 import About from "./components/About";
+import Home from "./components/Home"
 // import Footer from "./components/Footer";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         {/* <Navbar /> */}
         <Routes>
           {/* <Route path="/" element={<Footer />} /> */}
+          <Route path="/" element={<Home />} /> 
           <Route path="/Signup" element={<Signup />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Contact" element={<Contact />} />
@@ -25,8 +27,6 @@ function App() {
           <Route path="/Productfinder" element={<Productfinder />} />
           <Route path="/Productfinder1" element={<Productfinder1 />} />
           <Route path="/About" element={<About />} />
-
-
         </Routes>
         {/* <Footer /> */}
       </Router>

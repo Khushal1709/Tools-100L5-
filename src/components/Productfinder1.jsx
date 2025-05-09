@@ -9,6 +9,7 @@ import Support from "./Support";
 import finderp from "../image/finderp.svg";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import ston from "../image/ston.svg";
 
 const ProductFinderHero = () => {
   const [selectedProduct, setSelectedProduct] = useState("");
@@ -32,6 +33,16 @@ const ProductFinderHero = () => {
 
   return (
     <>
+    <div className="relative">
+          <div className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-280 " style={{ zIndex:1 }}>
+            <img
+              src={ston || "/placeholder.svg"}
+              alt="Background Shape"
+              className="w-full h-auto object-cover"
+            />
+            
+          </div>
+  
       <Navbar />
       <section className="w-full relative">
         {/* Leaf Background */}
@@ -296,6 +307,7 @@ const ProductFinderHero = () => {
           <Support />
         </div>
       </section>
+      </div>
       <Footer />
     </>
   );
