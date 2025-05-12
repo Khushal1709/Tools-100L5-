@@ -8,12 +8,27 @@ import Navbar from "./Navbar.jsx";
 import { Link } from "react-router-dom";
 import Support from "./Support";
 import Footer from "./Footer";
-
+import search from "../image/search.svg";
+import Oval2 from "../image/Oval2.svg";
 function Categories() {
   return (
     <>
       <div className="mx-auto">
-        
+        <img
+          src={Oval2 || "/placeholder.svg"}
+          alt="Background"
+          className="absolute w-150 h-auto object-cover "
+        />
+        <div
+          className="absolute inset-0 w-140 left-280 top-[-50px] hidden lg:block md:left-150 lg:left-115 xl:left-230 2xl:left-280 "
+          style={{ zIndex: -1 }}
+        >
+          <img
+            src={ston || "/placeholder.svg"}
+            alt="Background Shape"
+            className="w-full h-auto object-cover"
+          />
+        </div>
         <Navbar />
         <img
           src={leaf1}
@@ -64,20 +79,15 @@ function Categories() {
               </div>
             </div>
           </div>
-
-          {/* Right Illustration Section */}
-          <div className="flex-1 relative flex justify-center mt-8 md:mt-0">
+          <div className="flex-1 flex justify-center max-w-md w-full">
             <img
-              src={setting}
-              alt="Setting Illustration"
-              className="w-64 md:w-96 absolute top-[10%] left-[10%] hidden md:block"
-            />
-            <img
-              src={ston}
-              alt="Ston Illustration"
-              className="w-64 md:w-96 hidden md:block"
+              src={search}
+              alt="Illustration"
+              className="hidden lg:block w-full max-w-xs sm:max-w-sm md:max-w-md"
             />
           </div>
+
+          {/* Right Illustration Section */}
         </div>
 
         <MiscTools />

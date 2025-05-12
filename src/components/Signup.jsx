@@ -1,5 +1,4 @@
-
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import { Github } from "lucide-react";
 import login from "../image/login.svg";
 import logo from "../image/flogo.svg";
@@ -14,7 +13,11 @@ export default function Signup() {
 
       {/* Decorative image at bottom left */}
       <div className="absolute bottom-0 left-0 w-64 opacity-10 pointer-events-none z-0">
-        <img src={leaffooter} alt="decorative" className="w-full h-auto object-contain" />
+        <img
+          src={leaffooter}
+          alt="decorative"
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-4 py-12 relative z-10">
@@ -38,10 +41,11 @@ export default function Signup() {
           </div>
 
           {/* Logo */}
-          <div className="flex justify-center mb-6">
-            <img src={logo} alt="Logo" className="h-10" />
-          </div>
-          
+          <Link to="/">
+            <div className="flex justify-center mb-6">
+              <img src={logo} alt="Logo" className="h-10" />
+            </div>
+          </Link>
 
           {/* Title */}
           <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">
@@ -66,7 +70,7 @@ export default function Signup() {
               type="submit"
               className="w-full bg-[#050A30] text-white rounded-full py-3 font-medium hover:bg-navy-800 transition duration-300"
             >
-           CREATE ACCOUNT
+              CREATE ACCOUNT
             </button>
           </form>
 

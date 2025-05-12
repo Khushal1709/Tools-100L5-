@@ -1,17 +1,16 @@
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 import leaf from "../image/leaf.svg";
-import oval from "../image/oval.svg"
-import flogo from "../image/flogo.svg"
-import leaffooter from "../image/leaffooter.svg"
+import oval from "../image/oval.svg";
+import flogo from "../image/flogo.svg";
+import leaffooter from "../image/leaffooter.svg";
 export default function Footer() {
-
   const scrollToTop = () => {
     window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    })
-  }
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <footer className="relative pt-12 pb-6 overflow-hidden">
       {/* Decorative image at bottom left */}
@@ -34,7 +33,6 @@ export default function Footer() {
           height={400}
           className="w-full h-full object-contain"
         />
-
       </div>
       <div className="absolute top-10 right-0 w-[200px] h-full pointer-events-none">
         <img
@@ -44,7 +42,6 @@ export default function Footer() {
           height={400}
           className="w-full h-full object-contain"
         />
-        
       </div>
 
       <div className="max-w-7xl  mx-auto px-4">
@@ -53,12 +50,13 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="flex items-center mb-4">
               <div>
-                <Link to="/"><img
-                  src={flogo || "/placeholder.svg"}
-                  alt="Footer Logo"
-                  className=" rounded flex items-center justify-center mr-2"
-                  onClick={scrollToTop}
-                />
+                <Link to="/">
+                  <img
+                    src={flogo || "/placeholder.svg"}
+                    alt="Footer Logo"
+                    className=" rounded flex items-center justify-center mr-2"
+                    onClick={scrollToTop}
+                  />
                 </Link>
               </div>
             </div>
@@ -121,7 +119,6 @@ export default function Footer() {
                   className="text-gray-600 hover:text-indigo-600 transition-colors"
                 >
                   About Us
-                 
                 </Link>
               </li>
               <li>
@@ -261,7 +258,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
-

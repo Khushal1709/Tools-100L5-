@@ -1,6 +1,6 @@
-import Image from "next/image"
-import { Link } from "react-router-dom"
-import { Search, Home, ChevronDown, ArrowRight } from "lucide-react"
+import Image from "next/image";
+import { Link } from "react-router-dom";
+import { Search, Home, ChevronDown, ArrowRight } from "lucide-react";
 
 export default function ProductFinder() {
   return (
@@ -192,5 +192,5 @@ export default function ProductFinder() {
         </div>
       </main>
     </div>
-  )
+  );
 }
