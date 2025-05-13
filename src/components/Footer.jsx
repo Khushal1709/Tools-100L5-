@@ -254,7 +254,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center text-gray-500 text-sm">
-          Copyright © 2022 prodesigner All rights Rcerved
+          Copyright © 2025 ProDesigner All rights Reserved
         </div>
       </div>
     </footer>

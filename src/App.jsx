@@ -11,6 +11,9 @@ import Home from "./components/Home";
 import Submit from "./components/Submit";
 import Getfeatured from "./components/Getfeatured";
 // import Footer from "./components/Footer";
+import Cssclippathgenerator from "./CSStools1/Cssclippathgenerator"
+import Cssloader from "./CSStools1/Cssloader"
+
 
 function App() {
   
@@ -30,6 +33,9 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Submit" element={<Submit />} />
           <Route path="/Getfeatured" element={<Getfeatured />} />
+          {/* Tools files  */}
+          <Route path="/Cssclippathgenerator" element={<Cssclippathgenerator />} />
+          <Route path="/Cssloader" element={<Cssloader />} />
 
 
         </Routes>

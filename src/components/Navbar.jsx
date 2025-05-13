@@ -352,12 +352,12 @@ export default function Navbar() {
             onMouseEnter={() => setFeaturedOpen(true)}
             onMouseLeave={() => setFeaturedOpen(false)}
           >
-            <button className="flex items-center text-gray-700 hover:text-gray-900">
-              Get Featured
+            <button className="flex items-center  text-gray-700 hover:text-gray-900">
+              Categories
               <ChevronDown className="ml-1 h-4 w-4" />
             </button>
             {featuredOpen && (
-              <div className="absolute top-full w-60 bg-white rounded-xl shadow-lg py-2 z-10">
+              <div className="absolute text-center top-full w-60 bg-white rounded-xl shadow-lg py-2 z-10">
                 <Link
                   to="/tools/text"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
