@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect, useRef } from "react";
 
 export default function CSSLoaderGenerator() {
@@ -1952,3 +1950,279 @@ export default function CSSLoaderGenerator() {
     </div>
   );
 }
+
+// import React, { useState, useRef, useEffect } from "react";
+// import { HexColorPicker } from "react-colorful";
+
+// const patternTypes = [
+//   {
+//     label: "Checks",
+//     value: "checks",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[repeating-conic-gradient(#000_0%_25%,#fff_0%_50%)] bg-[length:12px_12px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Grid",
+//     value: "grid",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[length:12px_12px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Dot",
+//     value: "dot",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[radial-gradient(#000_1.5px,transparent_1.5px)] bg-[length:12px_12px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Cross Dots",
+//     value: "crossdots",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[radial-gradient(#000_1.5px,transparent_1.5px),radial-gradient(#000_1.5px,transparent_1.5px)] bg-[position:0_0,6px_6px] bg-[length:12px_12px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Vertical Lines",
+//     value: "vlines",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(to_right,#000_0_2px,transparent_2px_6px)] bg-[length:8px_8px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Horizontal Lines",
+//     value: "hlines",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(to_bottom,#000_0_2px,transparent_2px_6px)] bg-[length:8px_8px] rounded"></span>
+//     ),
+//   },
+//   {
+//     label: "Diagonal Lines",
+//     value: "dlines",
+//     icon: (
+//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(45deg,#000_0_2px,transparent_2px_8px)] bg-[length:10px_10px] rounded"></span>
+//     ),
+//   },
+// ];
+
+// const defaultPatternColor = "#474bff";
+// const defaultBgColor = "#47d3ff";
+// const defaultPatternSize = 32;
+
+// function getPatternCSS(type, patternColor, bgColor, patternSize) {
+//   switch (type) {
+//     case "checks":
+//       return `
+// background-image: repeating-conic-gradient(${patternColor} 0% 25%, ${bgColor} 0% 50%);
+// background-position: 0 0, ${patternSize}px ${patternSize}px;
+// background-size: ${patternSize * 2}px ${patternSize * 2}px;
+// background-color: ${bgColor};`.trim();
+//     case "grid":
+//       return `
+// background-image: linear-gradient(to right, ${patternColor} 1px, transparent 1px), linear-gradient(to bottom, ${patternColor} 1px, transparent 1px);
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     case "dot":
+//       return `
+// background-image: radial-gradient(${patternColor} 1.5px, transparent 1.5px);
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     case "crossdots":
+//       return `
+// background-image: radial-gradient(${patternColor} 1.5px, transparent 1.5px), radial-gradient(${patternColor} 1.5px, transparent 1.5px);
+// background-position: 0 0, ${patternSize / 2}px ${patternSize / 2}px;
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     case "vlines":
+//       return `
+// background-image: repeating-linear-gradient(to right, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     case "hlines":
+//       return `
+// background-image: repeating-linear-gradient(to bottom, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     case "dlines":
+//       return `
+// background-image: repeating-linear-gradient(45deg, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
+// background-size: ${patternSize}px ${patternSize}px;
+// background-color: ${bgColor};`.trim();
+//     default:
+//       return "";
+//   }
+// }
+
+// function getBGStyle(type, patternColor, bgColor, patternSize) {
+//   return {
+//     backgroundImage: getPatternCSS(type, patternColor, bgColor, patternSize)
+//       .match(/background-image:[^;]+/g)?.[0]
+//       ?.split(": ")[1],
+//     backgroundSize: getPatternCSS(type, patternColor, bgColor, patternSize)
+//       .match(/background-size:[^;]+/g)?.[0]
+//       ?.split(": ")[1],
+//     backgroundColor: bgColor,
+//     backgroundPosition: getPatternCSS(
+//       type,
+//       patternColor,
+//       bgColor,
+//       patternSize
+//     ).includes("background-position")
+//       ? getPatternCSS(type, patternColor, bgColor, patternSize)
+//           .match(/background-position:[^;]+/g)?.[0]
+//           ?.split(": ")[1]
+//       : undefined,
+//   };
+// }
+
+// function randomHexColor() {
+//   return (
+//     "#" +
+//     Math.floor(Math.random() * 16777215)
+//       .toString(16)
+//       .padStart(6, "0")
+//   );
+// }
+
+// export default function PatternGenerator() {
+//   const [patternType, setPatternType] = useState("checks");
+//   const [patternColor, setPatternColor] = useState(defaultPatternColor);
+//   const [bgColor, setBgColor] = useState(defaultBgColor);
+//   const [patternSize, setPatternSize] = useState(defaultPatternSize);
+//   const [copied, setCopied] = useState(false);
+//   const [showPatternPicker, setShowPatternPicker] = useState(false);
+//   const [showBgPicker, setShowBgPicker] = useState(false);
+
+//   const handleShuffle = () => {
+//     setPatternColor(randomHexColor());
+//     setBgColor(randomHexColor());
+//   };
+
+//   const handleCopy = () => {
+//     navigator.clipboard.writeText(
+//       getPatternCSS(patternType, patternColor, bgColor, patternSize)
+//     );
+//     setCopied(true);
+//     setTimeout(() => setCopied(false), 1500);
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-start">
+//       <div className="bg-white p-6 rounded-xl shadow-xl max-w-4xl w-full">
+//         <h1 className="text-2xl font-bold mb-4">
+//           CSS Background Pattern Generator
+//         </h1>
+//         <div className="flex flex-col md:flex-row gap-6">
+//           <div
+//             className="w-[320px] h-[320px] rounded overflow-hidden border shadow"
+//             style={getBGStyle(patternType, patternColor, bgColor, patternSize)}
+//           />
+//           <div className="flex-1 flex flex-col gap-4">
+//             <div>
+//               <label className="block font-medium mb-1">Pattern Type</label>
+//               <select
+//                 className="border rounded px-3 py-2 w-full"
+//                 value={patternType}
+//                 onChange={(e) => setPatternType(e.target.value)}
+//               >
+//                 {patternTypes.map((type) => (
+//                   <option key={type.value} value={type.value}>
+//                     {type.label}
+//                   </option>
+//                 ))}
+//               </select>
+//             </div>
+
+//             <div className="flex gap-4">
+//               {/* Pattern Color Picker */}
+//               <div className="relative w-full">
+//                 <label className="block font-medium mb-1">Pattern Color</label>
+//                 <div
+//                   className="flex items-center gap-2 p-2 border rounded-lg bg-white cursor-pointer shadow-sm"
+//                   onClick={() => {
+//                     setShowPatternPicker(!showPatternPicker);
+//                     setShowBgPicker(false);
+//                   }}
+//                 >
+//                   <div
+//                     className="w-6 h-6 rounded border"
+//                     style={{ backgroundColor: patternColor }}
+//                   />
+//                   <span className="text-sm font-mono">{patternColor}</span>
+//                 </div>
+//                 {showPatternPicker && (
+//                   <div className="absolute z-10 mt-2">
+//                     <HexColorPicker
+//                       color={patternColor}
+//                       onChange={setPatternColor}
+//                     />
+//                   </div>
+//                 )}
+//               </div>
+
+//               {/* Background Color Picker */}
+//               <div className="relative w-full">
+//                 <label className="block font-medium mb-1">
+//                   Background Color
+//                 </label>
+//                 <div
+//                   className="flex items-center gap-2 p-2 border rounded-lg bg-white cursor-pointer shadow-sm"
+//                   onClick={() => {
+//                     setShowBgPicker(!showBgPicker);
+//                     setShowPatternPicker(false);
+//                   }}
+//                 >
+//                   <div
+//                     className="w-6 h-6 rounded border"
+//                     style={{ backgroundColor: bgColor }}
+//                   />
+//                   <span className="text-sm font-mono">{bgColor}</span>
+//                 </div>
+//                 {showBgPicker && (
+//                   <div className="absolute z-10 mt-2">
+//                     <HexColorPicker color={bgColor} onChange={setBgColor} />
+//                   </div>
+//                 )}
+//               </div>
+//             </div>
+
+//             <div>
+//               <label className="block font-medium">
+//                 Pattern Size: {patternSize}px
+//               </label>
+//               <input
+//                 type="range"
+//                 min="8"
+//                 max="96"
+//                 value={patternSize}
+//                 onChange={(e) => setPatternSize(Number(e.target.value))}
+//                 className="w-full"
+//               />
+//             </div>
+
+//             <button
+//               onClick={handleShuffle}
+//               className="mt-2 px-4 py-2 border rounded-full text-blue-600 border-blue-600 hover:bg-blue-50 transition"
+//             >
+//               Shuffle Colors
+//             </button>
+//           </div>
+//         </div>
+
+//         <div className="mt-6 bg-gray-100 p-4 rounded relative">
+//           <span className="text-xs text-gray-400">CSS</span>
+//           <pre className="text-sm whitespace-pre-wrap mt-1">
+//             {getPatternCSS(patternType, patternColor, bgColor, patternSize)}
+//           </pre>
+//           <button
+//             onClick={handleCopy}
+//             className="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+//           >
+//             {copied ? "Copied!" : "Copy"}
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
