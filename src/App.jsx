@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -12,10 +11,16 @@ import Submit from "./components/Submit";
 import Getfeatured from "./components/Getfeatured";
 // import Footer from "./components/Footer";
 
-import Cssclippathgenerator from "./CSStools1/Cssclippathgenerator"
-import CSSbackgroundpattern from "./CSStools1/CSSbackgroundpattern"
+import Cssclippathgenerator from "./CSStools1/Cssclippathgenerator";
+import CSSbackgroundpattern from "./CSStools1/CSSbackgroundpattern";
+import Cssloader from "./CSStools1/Cssloader";
+import Csscubic from "./CSStools1/Csscubic";
+import Cssglassmorphism from "./CSStools1/Cssglassmorphism";
+import CSStrianglegenerator from "./CSStools1/CSStrianglegenerator";
 
-import Cssloader from "./CSStools1/Cssloader"
+
+
+
 
 
 function App() {
@@ -41,8 +46,10 @@ function App() {
           <Route path="/Cssclippathgenerator" element={<Cssclippathgenerator />} />
           <Route path="/Cssloader" element={<Cssloader />} />
           <Route path="/CSSbackgroundpattern" element={<CSSbackgroundpattern />} />
+          <Route path="/Csscubic" element={<Csscubic />} />
+          <Route path="/Cssglassmorphism" element={<Cssglassmorphism />} />
+          <Route path="/CSStrianglegenerator" element={<CSStrianglegenerator />} />
 
-    
 
         </Routes>
         {/* <Footer /> */}
