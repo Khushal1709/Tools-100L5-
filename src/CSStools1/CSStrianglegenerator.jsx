@@ -2,45 +2,69 @@ import React, { useState } from "react";
 
 const directions = [
   {
-    name: "Top Left",
-    value: "top-left",
-    borders: { borderWidth: (w, h) => `${h}px 0 0 ${w}px`, borderColor: (color) => `transparent transparent transparent ${color}` },
+    name: "Top left",
+    value: "top-right",
+    borders: {
+      borderWidth: (w, h) => `${h}px ${w}px 0 0`,
+      borderColor: (color) => `${color} transparent transparent transparent`
+    }
   },
   {
     name: "Top",
     value: "top",
-    borders: { borderWidth: (w, h) => `0 ${w / 2}px ${h}px ${w / 2}px`, borderColor: (color) => `transparent transparent ${color} transparent` },
+    borders: {
+      borderWidth: (w, h) => `0 ${w / 2}px ${h}px ${w / 2}px`,
+      borderColor: (color) => `transparent transparent ${color} transparent`
+    }
   },
   {
     name: "Top Right",
-    value: "top-right",
-    borders: { borderWidth: (w, h) => `0 ${w}px ${h}px 0`, borderColor: (color) => `transparent ${color} transparent transparent` },
+    value: "top-left",
+    borders: {
+      borderWidth: (w, h) => `${h}px 0 0 ${w}px`,
+      borderColor: (color) => `${color} transparent transparent transparent`
+    }
   },
   {
     name: "Right",
     value: "right",
-    borders: { borderWidth: (w, h) => `${h / 2}px 0 ${h / 2}px ${w}px`, borderColor: (color) => `transparent transparent transparent ${color}` },
+    borders: {
+      borderWidth: (w, h) => `${h / 2}px 0 ${h / 2}px ${w}px`,
+      borderColor: (color) => `transparent transparent transparent ${color}`
+    }
   },
   {
     name: "Bottom Right",
     value: "bottom-right",
-    borders: { borderWidth: (w, h) => `0 0 ${h}px ${w}px`, borderColor: (color) => `transparent transparent ${color} transparent` },
+    borders: {
+      borderWidth: (w, h) => `0 0 ${h}px ${w}px`,
+      borderColor: (color) => `transparent transparent ${color} transparent`
+    }
   },
   {
     name: "Bottom",
     value: "bottom",
-    borders: { borderWidth: (w, h) => `${h}px ${w / 2}px 0 ${w / 2}px`, borderColor: (color) => `${color} transparent transparent transparent` },
+    borders: {
+      borderWidth: (w, h) => `${h}px ${w / 2}px 0 ${w / 2}px`,
+      borderColor: (color) => `${color} transparent transparent transparent`
+    }
   },
   {
     name: "Bottom Left",
     value: "bottom-left",
-    borders: { borderWidth: (w, h) => `${h}px 0 0 ${w}px`, borderColor: (color) => `transparent transparent transparent ${color}` },
+    borders: {
+      borderWidth: (w, h) => `${h}px 0 0 ${w}px`,
+      borderColor: (color) => `transparent transparent transparent ${color}`
+    }
   },
   {
     name: "Left",
     value: "left",
-    borders: { borderWidth: (w, h) => `${h / 2}px ${w}px ${h / 2}px 0`, borderColor: (color) => `transparent ${color} transparent transparent` },
-  },
+    borders: {
+      borderWidth: (w, h) => `${h / 2}px ${w}px ${h / 2}px 0`,
+      borderColor: (color) => `transparent ${color} transparent transparent`
+    }
+  }
 ];
 
 function getBorderStyles(direction, width, height, color) {
@@ -48,7 +72,7 @@ function getBorderStyles(direction, width, height, color) {
   if (!dir) return {};
   return {
     borderWidth: dir.borders.borderWidth(width, height),
-    borderColor: dir.borders.borderColor(color),
+    borderColor: dir.borders.borderColor(color)
   };
 }
 
@@ -59,8 +83,9 @@ export default function TriangleGenerator() {
   const [height, setHeight] = useState(100);
 
   const borderStyles = getBorderStyles(direction, width, height, color);
+  const selectedDirectionName =
+    directions.find((d) => d.value === direction)?.name || "";
 
-  // CSS output for code box
   const cssCode = `
 width: 0;
 height: 0;
@@ -69,16 +94,15 @@ border-width: ${borderStyles.borderWidth};
 border-color: ${borderStyles.borderColor};
 `.trim();
 
-  // Tailwind classes for preview box outline
-  const previewBoxClass = "bg-transparent border border-gray-200 rounded-lg w-64 h-64 flex items-center justify-center";
+  const previewBoxClass =
+    "bg-transparent border border-gray-200 rounded-lg w-64 h-64 flex items-center justify-center overflow-auto";
 
-  // Inline styles for triangle preview
   const triangleStyle = {
     width: 0,
     height: 0,
     borderStyle: "solid",
     borderWidth: borderStyles.borderWidth,
-    borderColor: borderStyles.borderColor,
+    borderColor: borderStyles.borderColor
   };
 
   return (
@@ -93,8 +117,12 @@ border-color: ${borderStyles.borderColor};
           <div className={previewBoxClass}>
             <div style={triangleStyle}></div>
           </div>
-          <div className="mt-2 text-center text-gray-500">Preview</div>
+          <div className="mt-2 text-center text-gray-700 font-semibold">
+            {selectedDirectionName}
+          </div>
+          <div className="text-center text-gray-500">Preview</div>
         </div>
+
         {/* Controls */}
         <div className="flex-1 flex flex-col gap-4">
           {/* Direction */}
@@ -105,7 +133,11 @@ border-color: ${borderStyles.borderColor};
                 <button
                   key={dir.value}
                   onClick={() => setDirection(dir.value)}
-                  className={`border rounded p-2 flex items-center justify-center ${direction === dir.value ? "border-blue-600 ring-2 ring-blue-200" : "border-gray-200"}`}
+                  className={`border rounded p-2 flex items-center justify-center ${
+                    direction === dir.value
+                      ? "border-blue-600 ring-2 ring-blue-200"
+                      : "border-gray-200"
+                  }`}
                   aria-label={dir.name}
                   type="button"
                 >
@@ -114,13 +146,14 @@ border-color: ${borderStyles.borderColor};
                       width: 0,
                       height: 0,
                       borderStyle: "solid",
-                      ...getBorderStyles(dir.value, 30, 30, "#1e293b"),
+                      ...getBorderStyles(dir.value, 30, 30, "#1e293b")
                     }}
                   ></div>
                 </button>
               ))}
             </div>
           </div>
+
           {/* Color */}
           <div>
             <label className="block mb-1 font-medium" htmlFor="triangleColor">
@@ -134,6 +167,7 @@ border-color: ${borderStyles.borderColor};
               className="w-12 h-12 p-0 border-2 border-gray-200 rounded"
             />
           </div>
+
           {/* Width & Height */}
           <div className="flex gap-4">
             <div>
@@ -165,10 +199,13 @@ border-color: ${borderStyles.borderColor};
           </div>
         </div>
       </div>
+
       {/* CSS Output */}
       <div className="mt-8">
         <div className="mb-2 font-medium">CSS</div>
-        <pre className="bg-gray-100 p-4 rounded font-mono text-sm overflow-x-auto">{cssCode}</pre>
+        <pre className="bg-gray-100 p-4 rounded font-mono text-sm overflow-x-auto">
+          {cssCode}
+        </pre>
         <button
           className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
           onClick={() => {

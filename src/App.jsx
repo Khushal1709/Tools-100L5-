@@ -17,9 +17,10 @@ import Cssloader from "./CSStools1/Cssloader";
 import Csscubic from "./CSStools1/Csscubic";
 import Cssglassmorphism from "./CSStools1/Cssglassmorphism";
 import CSStrianglegenerator from "./CSStools1/CSStrianglegenerator";
-
-
-
+import Borderradiusgenerator from "./CSStools1/Borderradiusgenerator";
+import Csstextglitch from "./CSStools1/Csstextglitch";
+import Cssgradientgenerator from "./CSStools1/Cssgradientgenerator";
+import Cssboxshadowgenerator from "./CSStools1/Cssboxshadowgenerator";
 
 
 
@@ -41,16 +42,19 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Submit" element={<Submit />} />
           <Route path="/Getfeatured" element={<Getfeatured />} />
-          {/* Tools files  */}
-          
+        
+          {/* CSS TOOLS */}
           <Route path="/Cssclippathgenerator" element={<Cssclippathgenerator />} />
           <Route path="/Cssloader" element={<Cssloader />} />
           <Route path="/CSSbackgroundpattern" element={<CSSbackgroundpattern />} />
           <Route path="/Csscubic" element={<Csscubic />} />
           <Route path="/Cssglassmorphism" element={<Cssglassmorphism />} />
+          <Route path="/Csstextglitch" element={<Csstextglitch />} />
+          <Route path="/Cssgradientgenerator" element={<Cssgradientgenerator />} />
           <Route path="/CSStrianglegenerator" element={<CSStrianglegenerator />} />
-
-
+          <Route path="/Cssboxshadowgenerator" element={<Cssboxshadowgenerator />} />
+          <Route path="/Borderradiusgenerator" element={<Borderradiusgenerator />} />
+          
         </Routes>
         {/* <Footer /> */}
       </Router>
@@ -59,3 +63,4 @@ function App() {
 }
 
 export default App;
+
