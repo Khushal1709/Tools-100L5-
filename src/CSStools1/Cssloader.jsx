@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Share, Heart, Bug, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function CSSLoaderGenerator() {
   const [selectedCategory, setSelectedCategory] = useState("spinners");
@@ -7,6 +8,7 @@ export default function CSSLoaderGenerator() {
   const [hoveredLoaderId, setHoveredLoaderId] = useState(null);
   const [selectedLoader, setSelectedLoader] = useState(null);
   const [isCopied, setIsCopied] = useState(false);
+  const [copyType, setCopyType] = useState("");
 
   const dropdownRef = useRef(null);
   const modalRef = useRef(null);
@@ -199,7 +201,7 @@ export default function CSSLoaderGenerator() {
   // Rounded head comet loader
   function renderRoundedHeadCometLoader() {
     return (
-      <div className="h-16 w-16 rounded-full border-4 border-indigo-200 border-r-indigo-600 animate-spin"></div>
+      <div className="h-16 w-16 rounded-full border-4  border-indigo-200 border-r-indigo-600 animate-spin"></div>
     );
   }
 
@@ -1120,6 +1122,26 @@ export default function CSSLoaderGenerator() {
   <div class="ripple ripple-2"></div>
 </div>`;
 
+      case "spinnerRing":
+        return `<div class="spinner-ring"></div>`;
+
+      case "eclipse":
+        return `<div class="eclipse"></div>`;
+
+      case "hourglass":
+        return `<div class="hourglass"></div>`;
+
+      case "foldingCube":
+        return `<div class="folding-cube">
+  <div class="cube cube1"></div>
+  <div class="cube cube2"></div>
+  <div class="cube cube3"></div>
+  <div class="cube cube4"></div>
+</div>`;
+
+      case "rotatingSquare":
+        return `<div class="rotating-square"></div>`;
+
       // Bars
       case "materialUI":
         return `<div class="material-loader">
@@ -1131,6 +1153,74 @@ export default function CSSLoaderGenerator() {
   <div class="progress-bar"></div>
 </div>`;
 
+      case "gradientBar":
+        return `<div class="gradient-bar-container">
+  <div class="gradient-bar-overlay"></div>
+</div>`;
+
+      case "stripedBar":
+        return `<div class="striped-bar-container">
+  <div class="striped-bar"></div>
+</div>`;
+
+      case "steppedBar":
+        return `<div class="stepped-bar-container">
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>`;
+
+      case "indeterminateBar":
+        return `<div class="indeterminate-bar-container">
+  <div class="indeterminate-bar"></div>
+</div>`;
+
+      case "loadingBar":
+        return `<div class="loading-bar-container">
+  <div class="loading-bar"></div>
+</div>`;
+
+      case "skeletonBar":
+        return `<div class="skeleton-container">
+  <div class="skeleton-line"></div>
+  <div class="skeleton-line"></div>
+  <div class="skeleton-line"></div>
+</div>`;
+
+      case "elasticBar":
+        return `<div class="elastic-bar-container">
+  <div class="elastic-bar"></div>
+</div>`;
+
+      case "staggeredBars":
+        return `<div class="staggered-bars-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      case "equalizer":
+        return `<div class="equalizer-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      case "verticalBars":
+        return `<div class="vertical-bars-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      // Dots
       case "bouncingDots":
         return `<div class="bouncing-dots-container">
   <div class="dot"></div>
@@ -1145,8 +1235,260 @@ export default function CSSLoaderGenerator() {
   <div class="dot"></div>
 </div>`;
 
-      // Add more cases for other loaders
+      case "flashingDots":
+        return `<div class="flashing-dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
 
+      case "scalingDots":
+        return `<div class="scaling-dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "rotatingDots":
+        return `<div class="rotating-dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "chasingDots":
+        return `<div class="chasing-dots-container">
+  <div class="dot dot-1"></div>
+  <div class="dot dot-2"></div>
+</div>`;
+
+      case "dotWave":
+        return `<div class="dot-wave-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "dotCarousel":
+        return `<div class="dot-carousel-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "dotElastic":
+        return `<div class="dot-elastic-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "dotFloating":
+        return `<div class="dot-floating-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "dotRevolution":
+        return `<div class="dot-revolution-container">
+  <div class="center-dot"></div>
+  <div class="orbit"></div>
+</div>`;
+
+      case "dotWindmill":
+        return `<div class="dot-windmill-container">
+  <div class="center-dot"></div>
+  <div class="windmill-dot"></div>
+  <div class="windmill-dot"></div>
+  <div class="windmill-dot"></div>
+  <div class="windmill-dot"></div>
+</div>`;
+
+      // Pulses
+      case "pulseRing":
+        return `<div class="pulse-ring-container">
+  <div class="pulse"></div>
+  <div class="ring"></div>
+</div>`;
+
+      case "doublePulse":
+        return `<div class="double-pulse-container">
+  <div class="pulse pulse-1"></div>
+  <div class="pulse pulse-2"></div>
+</div>`;
+
+      case "multiPulse":
+        return `<div class="multi-pulse-container">
+  <div class="pulse pulse-1"></div>
+  <div class="pulse pulse-2"></div>
+  <div class="pulse pulse-3"></div>
+  <div class="ring"></div>
+</div>`;
+
+      case "heartbeat":
+        return `<div class="heartbeat"></div>`;
+
+      case "radar":
+        return `<div class="radar-container">
+  <div class="radar-arm"></div>
+</div>`;
+
+      case "sonar":
+        return `<div class="sonar-container">
+  <div class="ring"></div>
+  <div class="ring"></div>
+  <div class="ring"></div>
+  <div class="ring"></div>
+</div>`;
+
+      case "ripplePulse":
+        return `<div class="ripple-pulse-container">
+  <div class="center"></div>
+  <div class="ripple"></div>
+  <div class="ripple"></div>
+  <div class="ripple"></div>
+</div>`;
+
+      case "breathing":
+        return `<div class="breathing"></div>`;
+
+      case "beacon":
+        return `<div class="beacon-container">
+  <div class="center"></div>
+  <div class="ring"></div>
+</div>`;
+
+      case "pulseDots":
+        return `<div class="pulse-dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "pulseSquare":
+        return `<div class="pulse-square"></div>`;
+
+      case "pulseCircle":
+        return `<div class="pulse-circle"></div>`;
+
+      // Waves
+      case "sineWave":
+        return `<div class="sine-wave-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "waveDots":
+        return `<div class="wave-dots-container">
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+</div>`;
+
+      case "waveBars":
+        return `<div class="wave-bars-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      case "liquidWave":
+        return `<div class="liquid-wave-container">
+  <div class="wave"></div>
+</div>`;
+
+      case "circularWave":
+        return `<div class="circular-wave-container">
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>`;
+
+      case "oscillatingWave":
+        return `<div class="oscillating-wave-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      case "frequencyWave":
+        return `<div class="frequency-wave-container">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>`;
+
+      case "rippleWave":
+        return `<div class="ripple-wave-container">
+  <div class="center"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</div>`;
+
+      case "flowingWave":
+        return `<div class="flowing-wave-container">
+  <div class="wave"></div>
+</div>`;
+
+      case "gradientWave":
+        return `<div class="gradient-wave-container">
+  <div class="wave"></div>
+</div>`;
+
+      case "bubbleWave":
+        return `<div class="bubble-wave-container">
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+</div>`;
+
+      case "particleWave":
+        return `<div class="particle-wave-container">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>`;
+
+      // Default case
       default:
         return `<div class="loader"></div>`;
     }
@@ -1449,10 +1791,20 @@ export default function CSSLoaderGenerator() {
 }`;
 
       // Add more cases for other loaders
-
       default:
         return `.loader {
   /* Default loader styles */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #4f46e5;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }`;
     }
   }
@@ -1503,10 +1855,11 @@ export default function CSSLoaderGenerator() {
   const pageNumbers = getPageNumbers();
 
   // Function to copy code to clipboard
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (text, type) => {
     navigator.clipboard.writeText(text).then(
       () => {
         setIsCopied(true);
+        setCopyType(type);
       },
       (err) => {
         console.error("Could not copy text: ", err);
@@ -1515,258 +1868,186 @@ export default function CSSLoaderGenerator() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-4 bg-gray-50 min-h-screen">
+    <div className="min-h-screen ">
       {/* Header */}
-      <header className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-3">
-          <div className="text-indigo-600 animate-spin h-6 w-6">
-            <div className="h-3 w-3 rounded-full bg-indigo-600 opacity-75"></div>
+      <header className=" top-0 z-10 border-gray-200 px-4 sm:px-6 py-4">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-3">
+            <div className="h-8 w-8 rounded-full border-2 border-indigo-200 border-t-indigo-600 animate-spin"></div>
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+              CSS Loader Generator
+            </h1>
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">
-            CSS Loader Generator
-          </h1>
-        </div>
 
-        <div className="flex gap-2">
-          <button className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200 text-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
-              <polyline points="16 6 12 2 8 6" />
-              <line x1="12" y1="2" x2="12" y2="15" />
-            </svg>
-            <span>Share</span>
-          </button>
-
-          <button className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200 text-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-            </svg>
-            <span>Add to Favs</span>
-          </button>
-
-          <button className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200 text-sm">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
-            <span>Report Bug</span>
-          </button>
+          <div className="flex flex-wrap justify-center gap-2">
+            <button className="flex items-center gap-1 px-3 py-1.5 border rounded-full text-sm">
+              <Share className="h-4 w-4" />
+              <span className="hidden sm:inline">Share</span>
+            </button>
+            <button className="flex items-center gap-1 px-3 py-1.5 border rounded-full text-sm">
+              <Heart className="h-4 w-4" />
+              <span className="hidden sm:inline">Add to Favs</span>
+            </button>
+            <button className="flex items-center gap-1 px-3 py-1.5 border rounded-full text-sm">
+              <Bug className="h-4 w-4" />
+              <span className="hidden sm:inline">Report Bug</span>
+            </button>
+          </div>
         </div>
       </header>
 
-      {/* Back button */}
-      <div className="mb-6">
-        <button className="p-2 rounded-full hover:bg-gray-200">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Category selector and counter */}
-      <div className="flex justify-between items-center mb-6">
-        <div className="w-64 relative" ref={dropdownRef}>
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm"
-          >
-            <span>
-              {loaderCategories.find((cat) => cat.value === selectedCategory)
-                ?.label || "Select Category"}
-            </span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className={`h-4 w-4 transition-transform ${
-                isDropdownOpen ? "rotate-180" : ""
-              }`}
-            >
-              <path d="m6 9 6 6 6-6" />
-            </svg>
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 py-6">
+        {/* Back button */}
+        <div className="mb-6">
+          <button className="p-2 rounded-full hover:bg-gray-100">
+            <ChevronLeft className="h-5 w-5" />
           </button>
-
-          {isDropdownOpen && (
-            <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
-              {loaderCategories.map((category) => (
-                <button
-                  key={category.value}
-                  className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
-                    selectedCategory === category.value
-                      ? "bg-indigo-50 text-indigo-600"
-                      : ""
-                  }`}
-                  onClick={() => {
-                    setSelectedCategory(category.value);
-                    setIsDropdownOpen(false);
-                    setCurrentPage(1); // Reset to first page when changing category
-                  }}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          )}
         </div>
 
-        <div className="text-gray-600">
-          Total CSS Loader Count:{" "}
-          <span className="font-semibold">{filteredLoaders.length}</span>
-        </div>
-      </div>
+        {/* Category selector and counter */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+          <div className="w-full sm:w-64 relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="w-full flex items-center justify-between px-4 py-2 border border-gray-300 rounded-md bg-white text-sm"
+            >
+              <span>
+                {loaderCategories.find((cat) => cat.value === selectedCategory)
+                  ?.label || "Select Category"}
+              </span>
+              <ChevronRight
+                className={`h-4 w-4 transition-transform ${
+                  isDropdownOpen ? "rotate-90" : ""
+                }`}
+              />
+            </button>
 
-      {/* Loader grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        {currentLoaders.map((loader) => (
-          <div
-            key={loader.id}
-            className="bg-white border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center h-40 relative cursor-pointer"
-            onMouseEnter={() => setHoveredLoaderId(loader.id)}
-            onMouseLeave={() => setHoveredLoaderId(null)}
-          >
-            <div className="flex items-center justify-center h-full w-full">
-              {renderLoader(loader.type)}
-            </div>
-
-            {hoveredLoaderId === loader.id && (
-              <div className="absolute inset-0 bg-black bg-opacity-5 flex items-center justify-center">
-                <button
-                  className="bg-white px-3 py-1 rounded-md shadow-sm hover:bg-indigo-50"
-                  onClick={() => setSelectedLoader(loader)}
-                >
-                  View Code
-                </button>
+            {isDropdownOpen && (
+              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-md shadow-lg">
+                {loaderCategories.map((category) => (
+                  <button
+                    key={category.value}
+                    className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-100 ${
+                      selectedCategory === category.value
+                        ? "bg-indigo-50 text-indigo-600"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      setSelectedCategory(category.value);
+                      setIsDropdownOpen(false);
+                      setCurrentPage(1); // Reset to first page when changing category
+                    }}
+                  >
+                    {category.label}
+                  </button>
+                ))}
               </div>
             )}
-
-            <div className="mt-2 text-sm text-center text-gray-600">
-              {loader.name}
-            </div>
           </div>
-        ))}
-      </div>
 
-      {/* Pagination */}
-      <div className="flex items-center justify-center gap-2">
-        <button
-          onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          aria-label="Previous page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-        </button>
-
-        <div className="flex items-center gap-1">
-          {pageNumbers.map((page, index) =>
-            page === "..." ? (
-              <span key={`ellipsis-${index}`} className="px-2">
-                ...
-              </span>
-            ) : (
-              <button
-                key={`page-${page}`}
-                onClick={() => typeof page === "number" && setCurrentPage(page)}
-                className={`h-8 w-8 flex items-center justify-center rounded-full ${
-                  currentPage === page
-                    ? "bg-indigo-600 text-white"
-                    : "text-gray-700 hover:bg-gray-200"
-                }`}
-              >
-                {page}
-              </button>
-            )
-          )}
+          <div className="text-gray-600 text-sm sm:text-base">
+            Total CSS Loader Count:{" "}
+            <span className="font-semibold">{filteredLoaders.length}</span>
+          </div>
         </div>
 
-        <button
-          onClick={() =>
-            currentPage < totalPages && setCurrentPage(currentPage + 1)
-          }
-          disabled={currentPage === totalPages}
-          className="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          aria-label="Next page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="h-5 w-5"
+        {/* Loader grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {currentLoaders.map((loader) => (
+            <div
+              key={loader.id}
+              className="bg-white border border-gray-200 rounded-lg p-4 flex flex-col items-center justify-center h-40 relative cursor-pointer transition-all hover:shadow-md"
+              onMouseEnter={() => setHoveredLoaderId(loader.id)}
+              onMouseLeave={() => setHoveredLoaderId(null)}
+              onClick={() => setSelectedLoader(loader)}
+            >
+              <div className="flex items-center justify-center h-full w-full">
+                {renderLoader(loader.type)}
+              </div>
+
+              {hoveredLoaderId === loader.id && (
+                <div className="absolute inset-0 bg-black bg-opacity-5 flex items-center justify-center rounded-lg">
+                  <button
+                    className="bg-white px-3 py-1 rounded-md shadow-sm hover:bg-indigo-50 transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedLoader(loader);
+                    }}
+                  >
+                    View Code
+                  </button>
+                </div>
+              )}
+
+              <div className="mt-2 text-sm text-center text-gray-600">
+                {loader.name}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="flex items-center justify-center gap-2 mb-8">
+          <button
+            onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+            aria-label="Previous page"
           >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </button>
-      </div>
+            <ChevronLeft className="h-5 w-5" />
+            <span className="hidden sm:inline ml-1">Prev</span>
+          </button>
+
+          <div className="hidden sm:flex items-center gap-1">
+            {pageNumbers.map((page, index) =>
+              page === "..." ? (
+                <span key={`ellipsis-${index}`} className="px-2">
+                  ...
+                </span>
+              ) : (
+                <button
+                  key={`page-${page}`}
+                  onClick={() =>
+                    typeof page === "number" && setCurrentPage(page)
+                  }
+                  className={`h-8 w-8 flex items-center justify-center rounded-full ${
+                    currentPage === page
+                      ? "bg-indigo-600 text-white"
+                      : "text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {page}
+                </button>
+              )
+            )}
+          </div>
+
+          <div className="flex sm:hidden space-x-1">
+            {[...Array(totalPages)].map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`h-2 w-2 rounded-full ${
+                  currentPage === i + 1 ? "bg-indigo-600" : "bg-gray-300"
+                }`}
+                aria-label={`Page ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() =>
+              currentPage < totalPages && setCurrentPage(currentPage + 1)
+            }
+            disabled={currentPage === totalPages}
+            className="p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center"
+            aria-label="Next page"
+          >
+            <span className="hidden sm:inline mr-1">Next</span>
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
+      </main>
 
       {/* Code Modal */}
       {selectedLoader && (
@@ -1800,21 +2081,24 @@ export default function CSSLoaderGenerator() {
               </button>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <div className="mb-6">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-lg font-medium text-gray-800">HTML</h3>
                   <button
                     className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
-                      isCopied
+                      isCopied && copyType === "html"
                         ? "bg-green-100 text-green-800"
                         : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                     }`}
                     onClick={() =>
-                      copyToClipboard(generateHTMLCode(selectedLoader.type))
+                      copyToClipboard(
+                        generateHTMLCode(selectedLoader.type),
+                        "html"
+                      )
                     }
                   >
-                    {isCopied ? (
+                    {isCopied && copyType === "html" ? (
                       <>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -1873,15 +2157,18 @@ export default function CSSLoaderGenerator() {
                   <h3 className="text-lg font-medium text-gray-800">CSS</h3>
                   <button
                     className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-sm ${
-                      isCopied
+                      isCopied && copyType === "css"
                         ? "bg-green-100 text-green-800"
                         : "bg-gray-100 hover:bg-gray-200 text-gray-800"
                     }`}
                     onClick={() =>
-                      copyToClipboard(generateCSSCode(selectedLoader.type))
+                      copyToClipboard(
+                        generateCSSCode(selectedLoader.type),
+                        "css"
+                      )
                     }
                   >
-                    {isCopied ? (
+                    {isCopied && copyType === "css" ? (
                       <>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -1938,7 +2225,7 @@ export default function CSSLoaderGenerator() {
 
             <div className="p-4 border-t border-gray-200 flex justify-end">
               <button
-                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
                 onClick={() => setSelectedLoader(null)}
               >
                 Close
@@ -1950,279 +2237,3 @@ export default function CSSLoaderGenerator() {
     </div>
   );
 }
-
-// import React, { useState, useRef, useEffect } from "react";
-// import { HexColorPicker } from "react-colorful";
-
-// const patternTypes = [
-//   {
-//     label: "Checks",
-//     value: "checks",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[repeating-conic-gradient(#000_0%_25%,#fff_0%_50%)] bg-[length:12px_12px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Grid",
-//     value: "grid",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[length:12px_12px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Dot",
-//     value: "dot",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[radial-gradient(#000_1.5px,transparent_1.5px)] bg-[length:12px_12px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Cross Dots",
-//     value: "crossdots",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[radial-gradient(#000_1.5px,transparent_1.5px),radial-gradient(#000_1.5px,transparent_1.5px)] bg-[position:0_0,6px_6px] bg-[length:12px_12px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Vertical Lines",
-//     value: "vlines",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(to_right,#000_0_2px,transparent_2px_6px)] bg-[length:8px_8px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Horizontal Lines",
-//     value: "hlines",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(to_bottom,#000_0_2px,transparent_2px_6px)] bg-[length:8px_8px] rounded"></span>
-//     ),
-//   },
-//   {
-//     label: "Diagonal Lines",
-//     value: "dlines",
-//     icon: (
-//       <span className="inline-block w-5 h-5 bg-[repeating-linear-gradient(45deg,#000_0_2px,transparent_2px_8px)] bg-[length:10px_10px] rounded"></span>
-//     ),
-//   },
-// ];
-
-// const defaultPatternColor = "#474bff";
-// const defaultBgColor = "#47d3ff";
-// const defaultPatternSize = 32;
-
-// function getPatternCSS(type, patternColor, bgColor, patternSize) {
-//   switch (type) {
-//     case "checks":
-//       return `
-// background-image: repeating-conic-gradient(${patternColor} 0% 25%, ${bgColor} 0% 50%);
-// background-position: 0 0, ${patternSize}px ${patternSize}px;
-// background-size: ${patternSize * 2}px ${patternSize * 2}px;
-// background-color: ${bgColor};`.trim();
-//     case "grid":
-//       return `
-// background-image: linear-gradient(to right, ${patternColor} 1px, transparent 1px), linear-gradient(to bottom, ${patternColor} 1px, transparent 1px);
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     case "dot":
-//       return `
-// background-image: radial-gradient(${patternColor} 1.5px, transparent 1.5px);
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     case "crossdots":
-//       return `
-// background-image: radial-gradient(${patternColor} 1.5px, transparent 1.5px), radial-gradient(${patternColor} 1.5px, transparent 1.5px);
-// background-position: 0 0, ${patternSize / 2}px ${patternSize / 2}px;
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     case "vlines":
-//       return `
-// background-image: repeating-linear-gradient(to right, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     case "hlines":
-//       return `
-// background-image: repeating-linear-gradient(to bottom, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     case "dlines":
-//       return `
-// background-image: repeating-linear-gradient(45deg, ${patternColor} 0 2px, transparent 2px ${patternSize}px);
-// background-size: ${patternSize}px ${patternSize}px;
-// background-color: ${bgColor};`.trim();
-//     default:
-//       return "";
-//   }
-// }
-
-// function getBGStyle(type, patternColor, bgColor, patternSize) {
-//   return {
-//     backgroundImage: getPatternCSS(type, patternColor, bgColor, patternSize)
-//       .match(/background-image:[^;]+/g)?.[0]
-//       ?.split(": ")[1],
-//     backgroundSize: getPatternCSS(type, patternColor, bgColor, patternSize)
-//       .match(/background-size:[^;]+/g)?.[0]
-//       ?.split(": ")[1],
-//     backgroundColor: bgColor,
-//     backgroundPosition: getPatternCSS(
-//       type,
-//       patternColor,
-//       bgColor,
-//       patternSize
-//     ).includes("background-position")
-//       ? getPatternCSS(type, patternColor, bgColor, patternSize)
-//           .match(/background-position:[^;]+/g)?.[0]
-//           ?.split(": ")[1]
-//       : undefined,
-//   };
-// }
-
-// function randomHexColor() {
-//   return (
-//     "#" +
-//     Math.floor(Math.random() * 16777215)
-//       .toString(16)
-//       .padStart(6, "0")
-//   );
-// }
-
-// export default function PatternGenerator() {
-//   const [patternType, setPatternType] = useState("checks");
-//   const [patternColor, setPatternColor] = useState(defaultPatternColor);
-//   const [bgColor, setBgColor] = useState(defaultBgColor);
-//   const [patternSize, setPatternSize] = useState(defaultPatternSize);
-//   const [copied, setCopied] = useState(false);
-//   const [showPatternPicker, setShowPatternPicker] = useState(false);
-//   const [showBgPicker, setShowBgPicker] = useState(false);
-
-//   const handleShuffle = () => {
-//     setPatternColor(randomHexColor());
-//     setBgColor(randomHexColor());
-//   };
-
-//   const handleCopy = () => {
-//     navigator.clipboard.writeText(
-//       getPatternCSS(patternType, patternColor, bgColor, patternSize)
-//     );
-//     setCopied(true);
-//     setTimeout(() => setCopied(false), 1500);
-//   };
-
-//   return (
-//     <div className="min-h-screen bg-gray-100 p-4 flex justify-center items-start">
-//       <div className="bg-white p-6 rounded-xl shadow-xl max-w-4xl w-full">
-//         <h1 className="text-2xl font-bold mb-4">
-//           CSS Background Pattern Generator
-//         </h1>
-//         <div className="flex flex-col md:flex-row gap-6">
-//           <div
-//             className="w-[320px] h-[320px] rounded overflow-hidden border shadow"
-//             style={getBGStyle(patternType, patternColor, bgColor, patternSize)}
-//           />
-//           <div className="flex-1 flex flex-col gap-4">
-//             <div>
-//               <label className="block font-medium mb-1">Pattern Type</label>
-//               <select
-//                 className="border rounded px-3 py-2 w-full"
-//                 value={patternType}
-//                 onChange={(e) => setPatternType(e.target.value)}
-//               >
-//                 {patternTypes.map((type) => (
-//                   <option key={type.value} value={type.value}>
-//                     {type.label}
-//                   </option>
-//                 ))}
-//               </select>
-//             </div>
-
-//             <div className="flex gap-4">
-//               {/* Pattern Color Picker */}
-//               <div className="relative w-full">
-//                 <label className="block font-medium mb-1">Pattern Color</label>
-//                 <div
-//                   className="flex items-center gap-2 p-2 border rounded-lg bg-white cursor-pointer shadow-sm"
-//                   onClick={() => {
-//                     setShowPatternPicker(!showPatternPicker);
-//                     setShowBgPicker(false);
-//                   }}
-//                 >
-//                   <div
-//                     className="w-6 h-6 rounded border"
-//                     style={{ backgroundColor: patternColor }}
-//                   />
-//                   <span className="text-sm font-mono">{patternColor}</span>
-//                 </div>
-//                 {showPatternPicker && (
-//                   <div className="absolute z-10 mt-2">
-//                     <HexColorPicker
-//                       color={patternColor}
-//                       onChange={setPatternColor}
-//                     />
-//                   </div>
-//                 )}
-//               </div>
-
-//               {/* Background Color Picker */}
-//               <div className="relative w-full">
-//                 <label className="block font-medium mb-1">
-//                   Background Color
-//                 </label>
-//                 <div
-//                   className="flex items-center gap-2 p-2 border rounded-lg bg-white cursor-pointer shadow-sm"
-//                   onClick={() => {
-//                     setShowBgPicker(!showBgPicker);
-//                     setShowPatternPicker(false);
-//                   }}
-//                 >
-//                   <div
-//                     className="w-6 h-6 rounded border"
-//                     style={{ backgroundColor: bgColor }}
-//                   />
-//                   <span className="text-sm font-mono">{bgColor}</span>
-//                 </div>
-//                 {showBgPicker && (
-//                   <div className="absolute z-10 mt-2">
-//                     <HexColorPicker color={bgColor} onChange={setBgColor} />
-//                   </div>
-//                 )}
-//               </div>
-//             </div>
-
-//             <div>
-//               <label className="block font-medium">
-//                 Pattern Size: {patternSize}px
-//               </label>
-//               <input
-//                 type="range"
-//                 min="8"
-//                 max="96"
-//                 value={patternSize}
-//                 onChange={(e) => setPatternSize(Number(e.target.value))}
-//                 className="w-full"
-//               />
-//             </div>
-
-//             <button
-//               onClick={handleShuffle}
-//               className="mt-2 px-4 py-2 border rounded-full text-blue-600 border-blue-600 hover:bg-blue-50 transition"
-//             >
-//               Shuffle Colors
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="mt-6 bg-gray-100 p-4 rounded relative">
-//           <span className="text-xs text-gray-400">CSS</span>
-//           <pre className="text-sm whitespace-pre-wrap mt-1">
-//             {getPatternCSS(patternType, patternColor, bgColor, patternSize)}
-//           </pre>
-//           <button
-//             onClick={handleCopy}
-//             className="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-//           >
-//             {copied ? "Copied!" : "Copy"}
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

@@ -10,7 +10,6 @@ const CSSTextGlitchEffectGenerator = () => {
   const [glitchColor2, setGlitchColor2] = useState('#ff00ff');
   const codeRef = useRef(null);
 
-  // Responsive code generator
   const generateCode = () => {
     return `<div class="glitch-wrapper">
   <div class="glitch" data-glitch="${text}">${text}</div>
@@ -69,13 +68,22 @@ const CSSTextGlitchEffectGenerator = () => {
   100% { transform: translate(0); }
 }
 /* Extra responsiveness for very small devices */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .glitch {
-    font-size: clamp(16px, 12vw, 40px);
-    letter-spacing: 0.05em;
+    font-size: clamp(18px, 10vw, 60px);
+    letter-spacing: 0.08em;
   }
   .glitch-wrapper {
     padding: 4vw;
+  }
+}
+@media (max-width: 480px) {
+  .glitch {
+    font-size: clamp(14px, 14vw, 36px);
+    letter-spacing: 0.05em;
+  }
+  .glitch-wrapper {
+    padding: 6vw;
   }
 }
 </style>`;
@@ -91,35 +99,26 @@ const CSSTextGlitchEffectGenerator = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 bg-gray-50">
+    <div className="max-w-4xl mx-auto p-2 sm:p-4 bg-gray-50">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 sm:mb-6 gap-2">
         <div className="flex items-center">
           <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
             G
           </div>
-          <h1 className="text-xl font-bold">CSS Text Glitch Effect Generator</h1>
+          <h1 className="text-lg sm:text-xl font-bold">CSS Text Glitch Effect Generator</h1>
         </div>
         <div className="flex space-x-2">
-          <button className="px-4 py-1 border border-gray-300 rounded-full flex items-center text-sm ">
-            {/* Share Icon */}
-            Share
-          </button>
-          <button className="px-4 py-1 border border-gray-300 rounded-full flex items-center text-sm">
-            {/* Favs Icon */}
-            Add to Favs
-          </button>
-          <button className="px-4 py-1 border border-gray-300 rounded-full flex items-center text-sm">
-            {/* Bug Icon */}
-            Report Bug
-          </button>
+          <button className="px-3 py-1 border border-gray-300 rounded-full text-sm">Share</button>
+          <button className="px-3 py-1 border border-gray-300 rounded-full text-sm">Add to Favs</button>
+          <button className="px-3 py-1 border border-gray-300 rounded-full text-sm">Report Bug</button>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="bg-white p-6 rounded-md shadow-sm mb-6">
+      <div className="bg-white p-3 sm:p-6 rounded-md shadow-sm mb-4 sm:mb-6">
         {/* Controls Row */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4 sm:mb-6">
           <div>
             <label className="block text-sm text-gray-600 mb-1">Glitch Effect</label>
             <select
@@ -155,25 +154,26 @@ const CSSTextGlitchEffectGenerator = () => {
         </div>
 
         {/* Preview */}
-        <div className="mb-6 overflow-auto">
+        <div className="mb-4 sm:mb-6 overflow-x-auto">
           <div
-            className="w-full min-h-[120px] flex items-center justify-center"
+            className="w-full min-h-[80px] sm:min-h-[120px] flex items-center justify-center"
             style={{
               backgroundColor: backgroundColor,
-              padding: '2vw',
+              padding: '3vw',
               minHeight: '20vh',
               borderRadius: '8px',
             }}
           >
             <div
-              className="relative font-bold"
+              className="relative font-bold text-center"
               style={{
-                fontSize: `clamp(24px, ${fontSize / 10}vw, 120px)`,
+                fontSize: `clamp(18px, ${fontSize / 11}vw, 120px)`,
                 color: textColor,
                 letterSpacing: '0.1em',
                 lineHeight: 1.2,
                 wordBreak: 'break-word',
-                maxWidth: '90vw',
+                maxWidth: '95vw',
+                width: '100%',
               }}
               data-glitch={text}
             >
@@ -209,7 +209,7 @@ const CSSTextGlitchEffectGenerator = () => {
         </div>
 
         {/* Color Controls */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-4 sm:mb-6">
           <div>
             <label className="block text-sm text-gray-600 mb-1">Background Color</label>
             <div className="flex items-center">
@@ -263,8 +263,8 @@ const CSSTextGlitchEffectGenerator = () => {
         {/* Code Display */}
         <div>
           <label className="block text-sm text-gray-600 mb-1">HTML & CSS Code</label>
-          <div className="border border-gray-300 rounded bg-gray-50 p-4">
-            <pre className="text-sm overflow-auto" ref={codeRef}>
+          <div className="border border-gray-300 rounded bg-gray-50 p-2 sm:p-4 overflow-x-auto">
+            <pre className="text-xs sm:text-sm overflow-x-auto" ref={codeRef}>
               <code className="language-html">{generateCode()}</code>
             </pre>
           </div>
@@ -272,15 +272,15 @@ const CSSTextGlitchEffectGenerator = () => {
       </div>
 
       {/* Button Row */}
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
         <button
           onClick={handleReset}
-          className="px-6 py-2 bg-white border border-gray-300 rounded hover:bg-gray-50 flex items-center cursor-pointer"
+          className="px-4 py-2 bg-white border border-gray-300 rounded hover:bg-gray-50 flex items-center cursor-pointer"
         >
           Reset
         </button>
         <button
-          className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center cursor-pointer"
+          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 flex items-center cursor-pointer"
           onClick={() => {
             navigator.clipboard.writeText(generateCode());
           }}
@@ -299,13 +299,22 @@ const CSSTextGlitchEffectGenerator = () => {
           80% { transform: translate(3px, -3px); }
           100% { transform: translate(0); }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
           .glitch {
-            font-size: clamp(16px, 12vw, 40px) !important;
-            letter-spacing: 0.05em !important;
+            font-size: clamp(18px, 10vw, 60px) !important;
+            letter-spacing: 0.08em !important;
           }
           .glitch-wrapper {
             padding: 4vw !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .glitch {
+            font-size: clamp(14px, 14vw, 36px) !important;
+            letter-spacing: 0.05em !important;
+          }
+          .glitch-wrapper {
+            padding: 6vw !important;
           }
         }
       `}</style>
