@@ -21,6 +21,14 @@ import Borderradiusgenerator from "./CSStools1/Borderradiusgenerator";
 import Csstextglitch from "./CSStools1/Csstextglitch";
 import Cssgradientgenerator from "./CSStools1/Cssgradientgenerator";
 import Cssboxshadowgenerator from "./CSStools1/Cssboxshadowgenerator";
+import Opengraphmetagenerator from "./Socialmedia1/Opengraphmetagenerator";
+import Vimeothumbnailgrabber from "./Socialmedia1/Vimeothumbnailgrabber";
+import Youtubethumbnailgrabber from "./Socialmedia1/Youtubethumbnailgrabber";
+import Twitteradrevenuegenerator from "./Socialmedia1/Twitteradrevenuegenerator";
+
+
+
+
 
 
 
@@ -54,6 +62,19 @@ function App() {
           <Route path="/CSStrianglegenerator" element={<CSStrianglegenerator />} />
           <Route path="/Cssboxshadowgenerator" element={<Cssboxshadowgenerator />} />
           <Route path="/Borderradiusgenerator" element={<Borderradiusgenerator />} />
+
+
+          {/* Social Media section */}
+          <Route path="/Opengraphmetagenerator" element={<Opengraphmetagenerator />} />
+          <Route path="/Vimeothumbnailgrabber" element={<Vimeothumbnailgrabber />} />
+          <Route path="/Youtubethumbnailgrabber" element={<Youtubethumbnailgrabber />} />
+          <Route path="/Twitteradrevenuegenerator" element={<Twitteradrevenuegenerator />} />
+
+
+
+
+
+
           
         </Routes>
         {/* <Footer /> */}
