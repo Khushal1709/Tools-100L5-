@@ -25,6 +25,8 @@ import Opengraphmetagenerator from "./Socialmedia1/Opengraphmetagenerator";
 import Vimeothumbnailgrabber from "./Socialmedia1/Vimeothumbnailgrabber";
 import Youtubethumbnailgrabber from "./Socialmedia1/Youtubethumbnailgrabber";
 import Twitteradrevenuegenerator from "./Socialmedia1/Twitteradrevenuegenerator";
+import Temp from "./Socialmedia1/Temp";
+
 
 
 
@@ -69,6 +71,8 @@ function App() {
           <Route path="/Vimeothumbnailgrabber" element={<Vimeothumbnailgrabber />} />
           <Route path="/Youtubethumbnailgrabber" element={<Youtubethumbnailgrabber />} />
           <Route path="/Twitteradrevenuegenerator" element={<Twitteradrevenuegenerator />} />
+          <Route path="/Temp" element={<Temp />} />
+
 
 
 

@@ -1,5 +1,19 @@
 import { useState, useRef, useEffect } from "react";
-
+import { PiFileCssLight } from "react-icons/pi";
+import { FiShare2 } from "react-icons/fi";
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import { FiAlertCircle } from "react-icons/fi";
+import {
+  FaCheck,
+  FaRegCopy,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaEnvelope,
+  FaCopy,
+  FaRegStar,
+} from "react-icons/fa6";
+import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 const shapes = {
   triangle: {
     points: [
@@ -293,11 +307,24 @@ export default function ClipPathGenerator() {
     }
   };
 
+  const [open, setOpen] = useState(false);
+  const [bugDescription, setBugDescription] = useState("");
+  const [shareOpen, setShareOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("tool");
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const onFavoriteToggle = () => setIsFavorite(!isFavorite);
+
   return (
-    <div className="container mx-auto p-2 sm:p-4 max-w-full sm:max-w-4xl">
+    <div
+      className="max-w-4xl mx-auto mt-7 p-2
+"
+    >
       {showToast && (
         <div className="fixed top-2 sm:top-4 right-2 sm:right-4 bg-white border border-gray-200 rounded-lg shadow-lg p-3 sm:p-4 z-50 animate-fade-in-down">
-          <div className="font-medium text-sm sm:text-base">{toastMessage.title}</div>
+          <div className="font-medium text-sm sm:text-base">
+            {toastMessage.title}
+          </div>
           {toastMessage.description && (
             <div className="text-xs sm:text-sm text-gray-500 mt-1">
               {toastMessage.description}
@@ -305,44 +332,155 @@ export default function ClipPathGenerator() {
           )}
         </div>
       )}
-
-      <div className="flex justify-between items-center mb-4 sm:mb-6">
-        <div className="flex items-center gap-2">
-          <div className="text-blue-600">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="sm:w-24 sm:h-24"
-            >
-              <path
-                d="M12 2L2 7L12 12L22 7L12 2Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 17L12 22L22 17"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M2 12L12 17L22 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <h1 className="text-lg sm:text-xl font-bold">CSS Clip Path Generator</h1>
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
+        <div className="flex items-center gap-3 mb-2 sm:mb-0">
+          <span className="text-4xl text-indigo-400">
+            <MdOutlineDocumentScanner />
+          </span>
+          <span className="text-xl font-bold text-gray-900 md:text-sm lg:text-2xl sm:text-lg">
+            CSS&nbsp;Clip&nbsp;Path&nbsp;Generator
+          </span>
+        </div>
+        <div className="flex flex-col w-full md:flex-row md:justify-center md:items-center md:gap-4 lg:justify-end lg:gap-2">
+          <button
+            onClick={() => setShareOpen(true)}
+            className="flex items-center justify-center md:w-auto px-3 py-2 text-sm rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-600 mb-2 md:mb-0 cursor-pointer"
+          >
+            <FiShare2 className="mr-2" size={18} />
+            Share
+          </button>
+          <button
+            className="flex items-center justify-center gap-2 w-full md:w-auto px-3 py-2 text-sm rounded-xl border border-indigo-600 bg-indigo-50 text-indigo-600 cursor-pointer hover:bg-indigo-100 transition"
+            onClick={() => setOpen(true)}
+          >
+            <FiAlertCircle className="text-indigo-600 text-base" />
+            Report Bug
+          </button>
+          <button
+            onClick={onFavoriteToggle}
+            className={`px-3 py-2 rounded-xl border text-sm mt-2 md:mt-0 ml-0 cursor-pointer border-indigo-600 ${
+              isFavorite
+                ? "bg-indigo-100 border-indigo-600 text-indigo-700"
+                : "bg-indigo-50 border-indigo-300 text-indigo-600"
+            }`}
+          >
+            {isFavorite ? (
+              <>
+                <FaCheck className="inline-block mr-1" size={12} /> Added
+              </>
+            ) : (
+              <>
+                <FaRegStar className="inline-block mr-1" size={12} /> Add to
+                Favorites
+              </>
+            )}
+          </button>
         </div>
       </div>
+      {/* Share Popup */}
+      {shareOpen && (
+        <div className="fixed inset-0 bg-black/30 z-50 flex justify-center items-center">
+          <div className="bg-white p-6 rounded-2xl shadow-xl max-w-md w-full relative">
+            <div className="flex justify-between mb-4 bg-indigo-50 p-1 rounded-xl">
+              <button
+                onClick={() => setActiveTab("tool")}
+                className={`w-1/2 px-4 py-2 rounded-xl font-semibold text-sm ${
+                  activeTab === "tool"
+                    ? "bg-indigo-600 text-white"
+                    : "text-indigo-600 hover:bg-indigo-600 hover:text-white"
+                }`}
+              >
+                ⚙️ Share Tool
+              </button>
+              <button
+                onClick={() => setActiveTab("home")}
+                className={`w-1/2 px-4 py-2 rounded-xl font-semibold text-sm ${
+                  activeTab === "home"
+                    ? "bg-indigo-600 text-white"
+                    : "text-indigo-600 hover:bg-indigo-600 hover:text-white"
+                }`}
+              >
+                🏠 Share 10015
+              </button>
+            </div>
+            <div className="text-center border border-gray-300 rounded-xl p-6">
+              <p className="text-sm mb-1 text-gray-500">
+                You are currently sharing:
+              </p>
+              <h2 className="text-xl font-semibold mb-5 text-gray-600">
+                {activeTab === "tool"
+                  ? "Google Fonts Pair Finder"
+                  : "10015 Tools"}
+              </h2>
+              <div className="flex justify-center mb-6">
+                <MdShare className="text-indigo-500 text-7xl" />
+              </div>
+              <div className="flex justify-center gap-4">
+                {[FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaCopy].map(
+                  (Icon, i) => (
+                    <button
+                      key={i}
+                      className="text-white bg-indigo-500 rounded-full w-10 h-10 flex items-center justify-center"
+                    >
+                      <Icon />
+                    </button>
+                  )
+                )}
+              </div>
+            </div>
+            <button
+              className="absolute top-4 right-4 text-gray-600 text-lg"
+              onClick={() => setShareOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
+      {/* Bug Report Popup */}
+      {open && (
+        <div className="fixed inset-0 bg-black/30 z-40 flex justify-center items-center">
+          <div className="bg-white max-w-md w-full p-6 rounded-2xl shadow-lg relative">
+            <h2 className="text-xl font-bold mb-2">Bug Report</h2>
+            <p className="text-sm mb-4">
+              <strong>Tool:</strong> Lorem Ipsum Generator
+            </p>
+            <label className="text-sm mb-1 block" htmlFor="bugDescription">
+              Please describe the issue.
+            </label>
+            <textarea
+              id="bugDescription"
+              className="w-full p-3 border border-blue-300 rounded-xl text-base h-32 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              placeholder="Description*"
+              value={bugDescription}
+              onChange={(e) => setBugDescription(e.target.value)}
+            />
+            <div className="flex justify-end gap-3 mt-4">
+              <button
+                onClick={() => setOpen(false)}
+                className="px-4 py-2 bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-black rounded-lg"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={() => {
+                  if (!bugDescription.trim()) {
+                    alert("Please enter a description.");
+                    return;
+                  }
+                  console.log("Bug description submitted:", bugDescription);
+                  setOpen(false);
+                  setBugDescription("");
+                }}
+                className="px-4 py-2 bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-black rounded-lg"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="bg-slate-50 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
           <div>
@@ -353,7 +491,7 @@ export default function ClipPathGenerator() {
               <select
                 value={shape}
                 onChange={handleShapeChange}
-                className="block w-full px-3 sm:px-4 py-1 sm:py-2 pr-8 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none text-xs sm:text-sm"
+                className="block w-full px-3 sm:px-4 py-1 sm:py-2 pr-8 border border-gray-300 rounded-md focus:outline-none  appearance-none text-xs sm:text-sm"
               >
                 {Object.entries(shapes).map(([key, { name }]) => (
                   <option key={key} value={key}>
@@ -417,7 +555,9 @@ export default function ClipPathGenerator() {
               src={`https://picsum.photos/seed/${s}/80/60`}
               alt={`Thumbnail ${idx + 1}`}
               className={`rounded cursor-pointer border-2 transition ${
-                selectedImageIdx === idx ? "border-blue-500" : "border-transparent"
+                selectedImageIdx === idx
+                  ? "border-blue-500"
+                  : "border-transparent"
               }`}
               style={{ width: 60, height: 45, objectFit: "cover" }}
               onClick={() => handleThumbnailSelect(idx)}
@@ -427,7 +567,7 @@ export default function ClipPathGenerator() {
 
         <div
           className={`relative rounded-lg overflow-hidden ${
-            selectedImageIdx !== -1 ? "border-2 border-blue-500" : ""
+            selectedImageIdx !== -1 ? "border-2 border-gray-200" : ""
           } mx-auto`}
           style={{
             width: "100%",
@@ -595,7 +735,7 @@ export default function ClipPathGenerator() {
         </div>
       </div>
 
-      <div className="border rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+      <div className="border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
         <div className="mb-2 text-xs sm:text-sm font-medium">CSS Code</div>
         <pre className="bg-gray-50 p-2 sm:p-3 rounded text-xs sm:text-sm overflow-x-auto">
           <code>{clipPathCode}</code>
@@ -605,13 +745,13 @@ export default function ClipPathGenerator() {
       <div className="flex justify-center gap-3 sm:gap-4">
         <button
           onClick={handleReset}
-          className="px-3 sm:px-4 py-1 sm:py-2 border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-xs sm:text-base"
+          className="px-3 sm:px-4 py-1 sm:py-2 transition bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] cursor-pointer rounded-lg text-xs sm:text-base"
         >
           Reset
         </button>
         <button
           onClick={handleCopy}
-          className="px-3 sm:px-4 py-1 sm:py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 flex items-center gap-2 text-xs sm:text-base"
+          className="px-3 sm:px-4 py-1 sm:py-2 transition bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] cursor-pointer rounded-lg flex items-center gap-2 text-xs sm:text-base"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
