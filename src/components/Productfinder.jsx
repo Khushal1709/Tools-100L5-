@@ -248,7 +248,7 @@ const ProductFinderHero = () => {
               className="w-150 h-auto object-cover "
             />
           </div>
-          <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto  px-4 sm:px-6 lg:px-8 relative">
             <div className="py-12 flex flex-col lg:flex-row items-center justify-between relative z-10 gap-10">
               <div className="flex-1 text-center lg:text-left space-y-6 max-w-xl mx-auto lg:mx-0">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 leading-tight">

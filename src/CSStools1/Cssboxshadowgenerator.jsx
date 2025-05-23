@@ -350,7 +350,7 @@ box-shadow: ${shadowValue};
         </div>
 
         {/* CSS Output */}
-        <div className="border bg-gray-100 p-4 rounded mt-6 font-mono text-sm whitespace-pre overflow-auto">
+        <div className="border border-gray-300 bg-gray-100 p-4 rounded mt-6 font-mono text-sm whitespace-pre overflow-auto">
           <h1>CSS</h1>
           {cssCode}
         </div>

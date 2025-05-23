@@ -23,7 +23,7 @@ import Codingtools1 from "../Codingtools1/Codingtools1";
 import Imagestools1 from "../Imagestools1/imagestools1";
 import CSStools1 from "../CSStools1/CSStools1";
 import Colortool1 from "../Colortool1/Colortool1";
-import Socialmedia1 from "../Socialmedia1/Socialmedia1";
+import Socialmedia1 from "../Socialmedia1/Socialmedia01";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import firefox from "../image/firefox.svg";
@@ -143,6 +143,7 @@ function Home() {
     }
   };
 
+
   return (
     <>
       <div className="mx-auto">
@@ -186,7 +187,7 @@ function Home() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-4">
               <div className="relative inline-flex items-center">
-                <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 sm:px-8 py-2 rounded-full shadow-md whitespace-nowrap">
+                <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 sm:px-8 py-2 rounded-full shadow-md whitespace-nowrap" >
                   EXPLORE TOOL
                 </button>
                 <img
@@ -196,9 +197,10 @@ function Home() {
                 />
               </div>
               <div className="relative inline-flex items-center">
-                <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 py-2 rounded-full shadow-md whitespace-nowrap">
+                <Link to="/Productfinder"><button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 py-2 rounded-full shadow-md whitespace-nowrap cursor-pointer">
                   PRODUCT FINDER
                 </button>
+                </Link>
                 <img
                   src={finder || "/placeholder.svg"}
                   alt="Finder Icon"

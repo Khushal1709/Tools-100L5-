@@ -26,6 +26,11 @@ import Vimeothumbnailgrabber from "./Socialmedia1/Vimeothumbnailgrabber";
 import Youtubethumbnailgrabber from "./Socialmedia1/Youtubethumbnailgrabber";
 import Twitteradrevenuegenerator from "./Socialmedia1/Twitteradrevenuegenerator";
 import Temp from "./Socialmedia1/Temp";
+import Textool1 from "./Textool1/Textool1";
+import Imagetool from "./Imagestools1/imagetool";
+import Socialmedia from "./Socialmedia1/Socialmedia";
+
+
 
 
 
@@ -52,6 +57,14 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Submit" element={<Submit />} />
           <Route path="/Getfeatured" element={<Getfeatured />} />
+
+          {/* Categories section in navbar */}
+          <Route path="/Textool1" element={<Textool1 />} />
+          <Route path="/Imagetool" element={<Imagetool />} />
+          <Route path="/Socialmedia" element={<Socialmedia />} />
+
+
+
         
           {/* CSS TOOLS */}
           <Route path="/Cssclippathgenerator" element={<Cssclippathgenerator />} />

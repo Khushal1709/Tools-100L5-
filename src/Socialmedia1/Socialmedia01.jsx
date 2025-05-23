@@ -1,83 +1,72 @@
-import React from "react";
-import ston from "../image/ston.svg";
-import icon1 from "../image/icon1.svg";
-import icon2 from "../image/icon2.svg";
-import icon3 from "../image/icon3.svg";
-import icon4 from "../image/icon4.svg";
-import icon5 from "../image/icon5.svg";
-import icon6 from "../image/icon6.svg";
-import icon7 from "../image/icon7.svg";
-import icon8 from "../image/icon8.svg";
+import React from 'react'
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
 import whishlist from "../image/whishlist.svg"; // wishlist icon
 import whishlist2 from "../image/whishlist2.svg"; // wishlist icon
+import { MdMovieFilter } from "react-icons/md";
+import { MdPostAdd } from "react-icons/md";
+import { FaTwitterSquare } from "react-icons/fa";
+
+
 
 const tools = [
   {
-    title: "CSS Clip Path Generator",
+    title: "Instagram Filters",
     description:
       "Convert your text or string to uppercase, lowercase, title case & sentence case",
-    icon: icon1,
+    icon: <MdMovieFilter className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Loader Generator",
+    title: "Instagram Post Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon2,
+    icon: <MdPostAdd className='w-[200px] h-[60px] text-indigo-400'/>,
   },
+
   {
-    title: "CSS Background Pattern Generator",
+    title: "Tweet Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon3,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Cubic Bezier Generator",
-    description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon4,
-  },
-  {
-    title: "CSS Glassmorphism Generator",
+    title: "Tweet to Image Converter",
     description:
       "Extract all colors from an image and get color codes and details of this colors as a list",
-    icon: icon5,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Text Glitch Effect Generator",
+    title: "Twitter Ad Revenue Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon6,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Cubic Bezier Generator",
+    title: "YouTube Thumbnail Grabber",
     description:
       "Pick any color from an image with an eyedropper and get detailed info about the color you picked",
-    icon: icon7,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Gradient Generator",
+    title: "Vimeo Thumbnail Grabber",
     description:
       "Generate random SVG blobs with desired complexity and get SVG as code or file",
-    icon: icon8,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "CSS Triangle Generator",
+    title: "Open Graph Meta Generator",
     description:
       "Generate SVG patterns with different shapes and download it as SVG or an image file",
-    icon: icon8,
+    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
 ];
 
-function Socialmedia1() {
+
+function Socialmedia01() {
   return (
     <div>
       <div className="py-10 px-4 md:px-10 max-w-7xl mx-auto">
-        <h2
-          style={{ fontFamily: "David Libre" }}
-          className="text-2xl md:text-4xl font-semibold text-center text-[#1F2B56] mb-2"
-        >
+        <h2 style={{ fontFamily: "David Libre" }} className="text-2xl md:text-4xl font-semibold text-center text-[#1F2B56] mb-2">
           Social Media Tools
         </h2>
         <p className="text-center text-gray-500 mb-10">
@@ -106,11 +95,8 @@ function Socialmedia1() {
 
               {/* Tool Icon with background */}
               <div className="rounded-md flex items-center justify-center mb-4">
-                <img
-                  src={tool.icon}
-                  alt="Tool Icon"
-                  className="w-auto h-auto"
-                />
+                {/* <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" /> */}
+                <div alt="Tool Icon" className="">{tool.icon} </div>
               </div>
 
               {/* Title */}
@@ -119,7 +105,9 @@ function Socialmedia1() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">{tool.description}</p>
+              <p className="text-sm text-gray-600  mb-8">
+                {tool.description}
+              </p>
 
               {/* Arrow Button */}
               <div className="group absolute bottom-5.5 right-1">
@@ -141,7 +129,7 @@ function Socialmedia1() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Socialmedia1;
+export default Socialmedia01
