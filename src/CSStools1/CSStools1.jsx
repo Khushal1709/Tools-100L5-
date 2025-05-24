@@ -1,77 +1,90 @@
 import React from "react";
-import icon1 from "../image/icon1.svg";
-import icon2 from "../image/icon2.svg";
-import icon3 from "../image/icon3.svg";
-import icon4 from "../image/icon4.svg";
-import icon5 from "../image/icon5.svg";
-import icon6 from "../image/icon6.svg";
-import icon7 from "../image/icon7.svg";
-import icon8 from "../image/icon8.svg";
+// import icon1 from "../image/icon1.svg";
+// import icon2 from "../image/icon2.svg";
+// import icon3 from "../image/icon3.svg";
+// import icon4 from "../image/icon4.svg";
+// import icon5 from "../image/icon5.svg";
+// import icon6 from "../image/icon6.svg";
+// import icon7 from "../image/icon7.svg";
+// import icon8 from "../image/icon8.svg";
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
 import whishlist from "../image/whishlist.svg"; // wishlist icon
 import whishlist2 from "../image/whishlist2.svg";
+import { MdOutlineDocumentScanner } from "react-icons/md";
+import { LuLoader } from "react-icons/lu";
+import { TbBackground } from "react-icons/tb";
+ import { LuSpline } from "react-icons/lu";
+import { IoMdPhonePortrait } from "react-icons/io";
+import { CgGoogle } from "react-icons/cg";
+import { MdGradient } from "react-icons/md";
+import { IoTriangleSharp } from "react-icons/io5";
+import { FaBoxArchive } from "react-icons/fa6";
+import { AiOutlineRadiusUpright } from "react-icons/ai";
+
+
+
 
 const tools = [
   {
     title: "CSS Clip Path Generator",
     description:
       "Convert your text or string to uppercase, lowercase, title case & sentence case",
-    icon: icon1,
+    icon:<MdOutlineDocumentScanner className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Loader Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon2,
+    icon:<LuLoader className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Background Pattern Generator",
     description:
       "Count letters, words and sentences in a text and analyze this numbers with common limits",
-    icon: icon3,
+    icon:<TbBackground className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Cubic Bezier Generator",
     description:
       "Convert your text into handwriting with desired paper type and ink color and download as PDF",
-    icon: icon4,
+    icon:<LuSpline className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Glassmorphism Generator",
     description:
       "Extract all colors from an image and get color codes and details of this colors as a list",
-    icon: icon5,
+    icon:<IoMdPhonePortrait className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Text Glitch Effect Generator",
     description:
       "Pick any color from an image with an eyedropper and get detailed info about the color you picked",
-    icon: icon6,
+    icon:<CgGoogle className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Gradient Generator",
     description:
       "Generate random SVG blobs with desired complexity and get SVG as code or file",
-    icon: icon7,
+    icon:<MdGradient className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Triangle Generator",
     description:
       "Generate SVG patterns with different shapes and download it as SVG or an image file",
-    icon: icon8,
+    icon:<IoTriangleSharp className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Box Shadow Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: icon2,
+    icon:<FaBoxArchive className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Border Radius Generator",
     description:
       "Count letters, words and sentences in a text and analyze this numbers with common limits",
-    icon: icon3,
+    icon:<AiOutlineRadiusUpright className='w-[200px] h-[60px] text-indigo-400' />
   },
 ];
 
@@ -110,8 +123,9 @@ function CSStools1() {
               </div>
 
               {/* Tool Icon with background */}
-              <div className="rounded-md flex items-center justify-center mb-4">
-                <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" />
+             <div className="rounded-md flex items-center justify-center mb-4">
+                {/* <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" /> */}
+                <div  alt="Tool Icon" className="">{tool.icon} </div>
               </div>
 
               {/* Title */}

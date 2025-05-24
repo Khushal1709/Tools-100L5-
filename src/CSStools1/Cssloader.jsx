@@ -14,6 +14,8 @@ import { Share, Heart, Bug, ChevronLeft, ChevronRight } from "lucide-react";
   FaCopy,
   FaRegStar,
 } from "react-icons/fa6";
+ import { LuLoader } from "react-icons/lu";
+
 import { MdOutlineContentPaste, MdShare } from "react-icons/md";
 export default function CSSLoaderGenerator() {
   const [selectedCategory, setSelectedCategory] = useState("spinners");
@@ -1894,7 +1896,7 @@ export default function CSSLoaderGenerator() {
  <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-2">
         <div className="flex items-center gap-3 mb-2 sm:mb-0">
           <span className="text-4xl text-indigo-400">
-            <PiFileJsxBold />
+            <LuLoader />
           </span>
           <span className="text-2xl font-bold text-gray-900 md:text-sm lg:text-2xl sm:text-lg">
             CSS&nbsp;Loader&nbsp;Generator

@@ -428,6 +428,7 @@ function Home() {
         <div ref={Socialmedia1Ref}>
           <Socialmedia1 />
         </div>
+        
       </div>
       <Footer />
     </>

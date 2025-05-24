@@ -1,6 +1,6 @@
 import arror from "../image/arror.svg";
 import ston from '../image/ston.svg';
-import Socialmedia01 from './Socialmedia01';
+import CSStools1 from "./CSStools1";
 import Information from "../components/Information";
 import Oval2 from "../image/Oval2.svg";
 import leaf1 from "../image/leaf1.svg";
@@ -11,7 +11,7 @@ import search from "../image/search.svg";
 
 
 
-function Socialmedia() {
+function Csstool() {
     return (
         <>
                    <div className="absolute hidden lg:block left-80 top-0 bottom-120 inset-0 overflow-hidden z-0 lg:left-0 2xl:right-100 ">
@@ -40,10 +40,10 @@ function Socialmedia() {
         <div>
 
             {/* image grid section */}
-            <Information title="Online Socialmedia  Tools For Free" description="Looking for the best online social media tools to help you grow your online presence? Look no further than 10015.io. Our social media tools are designed to help you save time and engage with your audience easily. And best of all, they're free!" buttonText="EXPLORE TOOL" buttonText1="LOGIN / REGISTER" buttonText2="SIGN IN" srcImg={arror}  srcImg1={search} />
+            <Information title="Online CSS  Tools For Free" description="Looking for the best online social media tools to help you grow your online presence? Look no further than 10015.io. Our social media tools are designed to help you save time and engage with your audience easily. And best of all, they're free!" buttonText="EXPLORE TOOL" buttonText1="LOGIN / REGISTER" buttonText2="SIGN IN" srcImg={arror}  srcImg1={search} />
 
 
-            <Socialmedia01 />
+            <CSStools1 />
         </div>
             <Footer/>
 
@@ -51,4 +51,4 @@ function Socialmedia() {
     )
 }
 
-export default Socialmedia
+export default Csstool;

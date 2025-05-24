@@ -1,7 +1,8 @@
 import arror from "../image/arror.svg";
 import ston from '../image/ston.svg';
 import Information from '../components/Information';
-import Imagestools1 from './imagestools1';
+
+import MiscTools1 from './MiscTools1';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Oval2 from "../image/Oval2.svg";
@@ -10,7 +11,7 @@ import search from "../image/search.svg";
 
 
 
-function Imagetool() {
+function MiscTools() {
   return (
     <>
             <div className="absolute hidden lg:block left-80 top-0 bottom-120 inset-0 overflow-hidden z-0 lg:left-0 2xl:right-100 ">
@@ -39,11 +40,11 @@ function Imagetool() {
     <div>
   <div>
             
-            <Information title="Online  Image  Tools For Free"  description="Looking for the best online image tools? Look no further than our collection of image tools here at 10015.io. From basic editing to complex effects, these tools will help you get the most out of your images." buttonText="EXPLORE TOOL" buttonText1="LOGIN / REGISTER" buttonText2="SIGN IN" srcImg={arror} srcImg1={search}/>
+            <Information title="Miscellaneous Tools"  description="Looking for the best online image tools? Look no further than our collection of image tools here at 10015.io. From basic editing to complex effects, these tools will help you get the most out of your images." buttonText="EXPLORE TOOL" buttonText1="LOGIN / REGISTER" buttonText2="SIGN IN" srcImg={arror} srcImg1={search}/>
 
                     {/* image grid section */}
                     
-             <Imagestools1/>
+             <MiscTools1/>
         </div>
     </div>
     <Footer/>
@@ -51,4 +52,4 @@ function Imagetool() {
   )
 }
 
-export default Imagetool
+export default MiscTools

@@ -173,7 +173,7 @@ export default function Navbar() {
                 {mobileFeaturedOpen && (
                   <div className="w-full bg-gray-50 rounded-lg mt-2 py-2">
                     <Link
-                      to="/Textool1"
+                      to="/Textool"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -187,21 +187,21 @@ export default function Navbar() {
                       Image Tool
                     </Link>
                     <Link
-                      to="/tools/css"
+                      to="/Csstool"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       CSS Tool
                     </Link>
                     <Link
-                      to="/tools/coding"
+                      to="/Codingtool"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Coding Tools
                     </Link>
                     <Link
-                      to="/tools/color"
+                      to="/Colortool"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -215,7 +215,7 @@ export default function Navbar() {
                       Social Media Tools
                     </Link>
                     <Link
-                      to="/tools/misc"
+                      to="/MiscTools"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -359,7 +359,7 @@ export default function Navbar() {
             {featuredOpen && (
               <div className="absolute text-center top-full w-60 bg-white rounded-xl shadow-lg py-2 z-10">
                 <Link
-                  to="/tools/text"
+                  to="/Textool"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Text Tool
@@ -371,19 +371,19 @@ export default function Navbar() {
                   Image Tool
                 </Link>
                 <Link
-                  to="/tools/css"
+                  to="/Csstool"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   CSS Tool
                 </Link>
                 <Link
-                  to="/tools/coding"
+                  to="/Codingtool"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Coding Tools
                 </Link>
                 <Link
-                  to="/tools/color"
+                  to="/Colortool"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Color Tools
@@ -395,7 +395,7 @@ export default function Navbar() {
                   Social Media Tools
                 </Link>
                 <Link
-                  to="/tools/misc"
+                  to="/MiscTools"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Miscellaneous Tools

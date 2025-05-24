@@ -1,71 +1,45 @@
-import React from 'react'
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
 import whishlist from "../image/whishlist.svg"; // wishlist icon
 import whishlist2 from "../image/whishlist2.svg"; // wishlist icon
-import { MdMovieFilter } from "react-icons/md";
-import { MdPostAdd } from "react-icons/md";
-import { FaTwitterSquare } from "react-icons/fa";
-import { LuGitGraph } from "react-icons/lu";
-import { IoLogoVimeo } from "react-icons/io";
-import { FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-
-
+import { ImBarcode } from "react-icons/im";
+import { BsQrCode } from "react-icons/bs";
+import { MdOutlineContentPaste, MdShare } from "react-icons/md";
+import { BiSolidLock } from "react-icons/bi";
 
 const tools = [
   {
-    title: "Instagram Filters",
+    title: "Bar Code Generator",
     description:
       "Convert your text or string to uppercase, lowercase, title case & sentence case",
-    icon: <MdMovieFilter className='w-[200px] h-[60px] text-indigo-400'/>,
+     icon: <ImBarcode className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "Instagram Post Generator",
+    title: "QR Code Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: <MdPostAdd className='w-[200px] h-[60px] text-indigo-400'/>,
+     icon: <BsQrCode className='w-[200px] h-[60px] text-indigo-400'/>,
   },
-
   {
-    title: "Tweet Generator",
+    title: "List Randomizer",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
+     icon: <MdOutlineContentPaste className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
-    title: "Twitter Ad Revenue Generator",
+    title: "Strong Random Password Generator",
     description:
       "Create your placeholder texts with desired number of paragraphs and properties",
-    icon: <FaXTwitter className='w-[200px] h-[60px] text-indigo-400'/>,
-  },
-  {
-    title: "YouTube Thumbnail Grabber",
-    description:
-      "Pick any color from an image with an eyedropper and get detailed info about the color you picked",
-    icon: <FaYoutube className='w-[200px] h-[60px] text-indigo-400'/>,
-  },
-  {
-    title: "Vimeo Thumbnail Grabber",
-    description:
-      "Generate random SVG blobs with desired complexity and get SVG as code or file",
-    icon: <IoLogoVimeo className='w-[200px] h-[60px] text-indigo-400'/>,
-  },
-  {
-    title: "Open Graph Meta Generator",
-    description:
-      "Generate SVG patterns with different shapes and download it as SVG or an image file",
-    icon: <LuGitGraph className='w-[200px] h-[60px] text-indigo-400'/>,
+     icon: <BiSolidLock className='w-[200px] h-[60px] text-indigo-400'/>,
   },
 ];
 
-
-function Socialmedia01() {
+const MiscTools = () => {
   return (
-    <div>
+    <>
       <div className="py-10 px-4 md:px-10 max-w-7xl mx-auto">
-        <h2 style={{ fontFamily: "David Libre" }} className="text-2xl md:text-4xl font-semibold text-center text-[#1F2B56] mb-2">
-          Social Media Tools
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1F2B56] mb-2">
+          Miscellaneous Tools
         </h2>
         <p className="text-center text-gray-500 mb-10">
           Smart Tools. Simple Solutions.
@@ -75,7 +49,7 @@ function Socialmedia01() {
           {tools.map((tool, index) => (
             <div
               key={index}
-              className="relative rounded-2xl shadow-md cursor-pointer  p-6 bg-[#F6F5F8]  flex flex-col justify-between transition-all duration-300"
+              className="relative rounded-2xl shadow-md p-6 bg-[#F6F5F8]  flex flex-col justify-between transition-all duration-300"
             >
               {/* Wishlist Icon */}
               <div className="group raltive">
@@ -92,9 +66,9 @@ function Socialmedia01() {
               </div>
 
               {/* Tool Icon with background */}
-              <div className="rounded-md flex items-center justify-center mb-4">
+                        <div className="rounded-md flex items-center justify-center mb-4">
                 {/* <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" /> */}
-                <div alt="Tool Icon" className="">{tool.icon} </div>
+                <div  alt="Tool Icon" className="">{tool.icon} </div>
               </div>
 
               {/* Title */}
@@ -103,9 +77,7 @@ function Socialmedia01() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">
-                {tool.description}
-              </p>
+              <p className="text-sm text-gray-600  mb-8">{tool.description}</p>
 
               {/* Arrow Button */}
               <div className="group absolute bottom-5.5 right-1">
@@ -126,8 +98,8 @@ function Socialmedia01() {
           ))}
         </div>
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default Socialmedia01
+export default MiscTools;

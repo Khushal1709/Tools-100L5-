@@ -1,7 +1,7 @@
-import React from 'react'
+
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
-import whishlist from "../image/whishlist.svg"; // wishlist icon
+import whishlist from "../image/whishlist.svg"; 
 import whishlist2 from "../image/whishlist2.svg";
 import { TbFilters } from "react-icons/tb";
 import { GiResize } from "react-icons/gi";
@@ -13,13 +13,6 @@ import { FaCropSimple } from "react-icons/fa6";
 import { MdMovieFilter } from "react-icons/md";
 import { MdFormatColorFill } from "react-icons/md";
 import { PiImageSquareFill } from "react-icons/pi";
-
-
-
-
-
-
-
 
 
 
@@ -89,7 +82,7 @@ function Imagestools1() {
   return (
     <div>
 
-      <div className="py-10 px-4 md:px-10 max-w-7xl mx-auto">
+      <div className=" px-4 md:px-10 max-w-7xl mx-auto">
         <h2 style={{ fontFamily: "David Libre" }} className="text-2xl md:text-4xl font-semibold text-center text-[#1F2B56] mb-2">
           Image Tools
         </h2>

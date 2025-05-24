@@ -1,15 +1,22 @@
-import React from 'react'
-import icon1 from "../image/icon1.svg";
-import icon2 from "../image/icon2.svg";
-import icon3 from "../image/icon3.svg";
-import icon4 from "../image/icon4.svg";
-import icon5 from "../image/icon5.svg";
-import icon6 from "../image/icon6.svg";
-import icon7 from "../image/icon7.svg";
+
+// import icon1 from "../image/icon1.svg";
+// import icon2 from "../image/icon2.svg";
+// import icon3 from "../image/icon3.svg";
+// import icon4 from "../image/icon4.svg";
+// import icon5 from "../image/icon5.svg";
+// import icon6 from "../image/icon6.svg";
+// import icon7 from "../image/icon7.svg";
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
 import whishlist from "../image/whishlist.svg"; // wishlist icon
-import whishlist2 from "../image/whishlist2.svg"
+import whishlist2 from "../image/whishlist2.svg";
+import { FaBookReader } from "react-icons/fa";
+import { VscCaseSensitive } from "react-icons/vsc";
+import { MdGroups } from "react-icons/md";
+import { TbTransform } from "react-icons/tb";
+import { SlEnvolopeLetter } from "react-icons/sl";
+import { MdOutlineContentPaste, MdShare } from "react-icons/md";
+import { BsScissors } from "react-icons/bs";
 
 function Textool1() {
 
@@ -18,37 +25,37 @@ function Textool1() {
         {
           title: "Case Converter",
           description: "Convert your text or string to uppercase, lowercase, title case & sentence case",
-          icon: icon1,
+          icon: <VscCaseSensitive className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Lorem Ipsum Generator",
           description: "Create your placeholder texts with desired number of paragraphs and properties",
-          icon: icon2,
+          icon: <  MdOutlineContentPaste className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Letter Counter",
           description: "Count letters, words and sentences in a text and analyze this numbers with common limits",
-          icon: icon3,
+          icon: < SlEnvolopeLetter className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Text To Handwriting Converter",
           description: "Convert your text into handwriting with desired paper type and ink color and download as PDF",
-          icon: icon4,
+          icon: < TbTransform className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Bionic Reading Converter",
           description: "Convert your texts into Bionic Reading mode to read them faster than before",
-          icon: icon5,
+          icon: <FaBookReader className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Multiple Whitespace Remover",
           description: "Remove multiple whitespaces and line breaks in a text and clear unwanted characters",
-          icon: icon6,
+          icon: <BsScissors className='w-[200px] h-[60px] text-indigo-400'/>,
         },
         {
           title: "Font Pair Generator",
           description: "Find font pairs which looks cool together on your designs, pages or apps as heading and body font",
-          icon: icon7,
+          icon: < MdGroups className='w-[200px] h-[60px] text-indigo-400'/>,
         }
       ];
   return (
@@ -84,8 +91,9 @@ function Textool1() {
                     
                                 {/* Tool Icon with background */}
                                 <div className="rounded-md flex items-center justify-center mb-4">
-                                  <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" />
-                                </div>
+                {/* <img src={tool.icon} alt="Tool Icon" className="w-auto h-16" /> */}
+                <div  alt="Tool Icon" className="">{tool.icon} </div>
+              </div>
                     
                                 {/* Title */}
                                 <h3 className="text-base font-semibold text-[#1F2B56] mb-2 break-words">
