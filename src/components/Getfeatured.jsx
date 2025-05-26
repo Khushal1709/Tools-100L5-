@@ -249,35 +249,34 @@
 
 // export default ProductFinderHero;
 
-
-import { useState } from "react"
-import { Star } from "lucide-react"
-import search from "../image/search.svg"
-import explore from "../image/explore.svg"
-import finder from "../image/finder.svg"
-import firefox from "../image/firefox.svg"
-import Getleaf from "../image/Getleaf.svg"
-import Support from "./Support" // Import the Support component
-import { Link } from "react-router-dom"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-import ston from "../image/ston.svg"
-import Oval2 from "../image/Oval2.svg"
+import { useState } from "react";
+import { Star } from "lucide-react";
+import search from "../image/search.svg";
+import explore from "../image/explore.svg";
+import finder from "../image/finder.svg";
+import firefox from "../image/firefox.svg";
+import Getleaf from "../image/Getleaf.svg";
+import Support from "./Support"; // Import the Support component
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import ston from "../image/ston.svg";
+import Oval2 from "../image/Oval2.svg";
 import chrome from "../image/chrome.svg";
 const ProductFinderHero = () => {
-  const [selectedProduct, setSelectedProduct] = useState("")
-  const [selectedPackage, setSelectedPackage] = useState(1)
-  const [showAuthModal, setShowAuthModal] = useState(false)
-  const isAuthenticated = false // Replace with actual auth logic
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedPackage, setSelectedPackage] = useState(1);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const isAuthenticated = false; // Replace with actual auth logic
 
   // Only show auth modal when submitting, not when selecting
   const handleSubmit = () => {
     if (!isAuthenticated) {
-      setShowAuthModal(true)
-      return
+      setShowAuthModal(true);
+      return;
     }
-    alert(`Submitting for ${selectedProduct || "Unknown Product"}`)
-  }
+    alert(`Submitting for ${selectedProduct || "Unknown Product"}`);
+  };
 
   return (
     <>
@@ -359,30 +358,30 @@ const ProductFinderHero = () => {
                     </p>
                     <div className="flex items-center justify-center gap-4">
                       <div className="h-px w-12 bg-gray-300" />
-             <a
-                                 href="https://chrome.google.com/webstore"
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="flex items-center py-2 text-sm text-gray-700 hover:bg-gray-100"
-                               >
-                                 <img
-                                   src={chrome || "/placeholder.svg"}
-                                   alt="Chrome"
-                                   className="w-6 h-6"
-                                 />
-                               </a>
-                               <a
-                                 href="https://chrome.google.com/webstore"
-                                 target="_blank"
-                                 rel="noopener noreferrer"
-                                 className="flex items-center py-2 text-sm text-gray-700 hover:bg-gray-100"
-                               >
-                                 <img
-                                   src={firefox || "/placeholder.svg"}
-                                   alt="Firefox"
-                                   className="w-6 h-6"
-                                 />
-                               </a>
+                      <a
+                        href="https://chrome.google.com/webstore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <img
+                          src={chrome || "/placeholder.svg"}
+                          alt="Chrome"
+                          className="w-6 h-6"
+                        />
+                      </a>
+                      <a
+                        href="https://chrome.google.com/webstore"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <img
+                          src={firefox || "/placeholder.svg"}
+                          alt="Firefox"
+                          className="w-6 h-6"
+                        />
+                      </a>
                       <div className="h-px w-12 bg-gray-300" />
                     </div>
                   </div>
@@ -412,7 +411,7 @@ const ProductFinderHero = () => {
                   </label>
                   <select
                     value={selectedProduct}
-                    onChange={e => setSelectedProduct(e.target.value)}
+                    onChange={(e) => setSelectedProduct(e.target.value)}
                     className="w-full max-w-md mx-auto px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
                     <option value="">Select Your Plan</option>
@@ -427,7 +426,7 @@ const ProductFinderHero = () => {
                   Please choose your package*
                 </label>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-                  {[1, 2, 3].map(num => (
+                  {[1, 2, 3].map((num) => (
                     <div
                       key={num}
                       className={`relative bg-white p-6 rounded-2xl shadow-lg cursor-pointer ${
@@ -472,7 +471,7 @@ const ProductFinderHero = () => {
                       </ul>
                       <button
                         onClick={handleSubmit}
-                        className="mt-6 w-full bg-[#14143B] text-white font-semibold py-2 rounded-full hover:bg-blue-800 transition"
+                        className="mt-6 w-full bg-[#14143B] text-white font-semibold py-2 rounded-full hover:bg-blue-400 transition cursor-pointer"
                       >
                         Submit
                       </button>
@@ -494,15 +493,17 @@ const ProductFinderHero = () => {
                   You need to sign in or register to use this feature
                 </p>
                 <div className="flex justify-center gap-4">
-                  <button
-                    className="px-6 py-2 bg-blue-100 text-blue-700 rounded-full font-medium hover:bg-blue-200"
-                    onClick={() => setShowAuthModal(false)}
-                  >
-                    Register
-                  </button>
+                  <Link to="/Signup">
+                    <button
+                      className="px-6 py-2 bg-blue-100 text-blue-700 rounded-full font-medium hover:bg-blue-200 cursor-pointer"
+                      onClick={() => setShowAuthModal(false)}
+                    >
+                      Register
+                    </button>
+                  </Link>
                   <Link to="/Login">
                     <button
-                      className="px-6 py-2 bg-gradient-to-r from-[#cdddfd] to-[#e5c9fd] text-[#060B57] font-medium rounded-full hover:opacity-90"
+                      className="px-6 py-2 bg-gradient-to-r from-[#cdddfd] to-[#e5c9fd] text-[#060B57] font-medium rounded-full hover:opacity-90 cursor-pointer"
                       onClick={() => setShowAuthModal(false)}
                     >
                       Sign In
@@ -518,7 +519,7 @@ const ProductFinderHero = () => {
       </section>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default ProductFinderHero
+export default ProductFinderHero;

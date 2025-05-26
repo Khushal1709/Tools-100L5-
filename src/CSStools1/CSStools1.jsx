@@ -29,61 +29,61 @@ const tools = [
   {
     title: "CSS Clip Path Generator",
     description:
-      "Convert your text or string to uppercase, lowercase, title case & sentence case",
+      "Generate CSS clip-path with different patterns and use clip-path property in your projects",
     icon:<MdOutlineDocumentScanner className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Loader Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Generate fancy CSS loaders by specifying the type,color, and sizeo of the loading indicator",
     icon:<LuLoader className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Background Pattern Generator",
     description:
-      "Count letters, words and sentences in a text and analyze this numbers with common limits",
+      "Generate beautiful CSS-only background patterns with and use it in your projects right away",
     icon:<TbBackground className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Cubic Bezier Generator",
     description:
-      "Convert your text into handwriting with desired paper type and ink color and download as PDF",
+      "Generate CSS cubic Bezier easing functions by previewing animation and time-progress graph",
     icon:<LuSpline className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Glassmorphism Generator",
     description:
-      "Extract all colors from an image and get color codes and details of this colors as a list",
+      "Generate CSS for applying frosted-glass effect on your HTML elements by using background blur",
     icon:<IoMdPhonePortrait className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Text Glitch Effect Generator",
     description:
-      "Pick any color from an image with an eyedropper and get detailed info about the color you picked",
+      "Generate CSS text glitch effect and create fancy text animations by using pure CSS",
     icon:<CgGoogle className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Gradient Generator",
     description:
-      "Generate random SVG blobs with desired complexity and get SVG as code or file",
+      "Generate beautiful CSS gradients either by using presets or customizing your own",
     icon:<MdGradient className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Triangle Generator",
     description:
-      "Generate SVG patterns with different shapes and download it as SVG or an image file",
+      "Generate CSS Code for triangles shapes with desired width, height and color",
     icon:<IoTriangleSharp className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Box Shadow Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Generate CSS Code for box shadows while previewing it for box,circle or header design",
     icon:<FaBoxArchive className='w-[200px] h-[60px] text-indigo-400' />
   },
   {
     title: "CSS Border Radius Generator",
     description:
-      "Count letters, words and sentences in a text and analyze this numbers with common limits",
+      "Generate advanced CSS border radius to shape your HTML elements corners individually", 
     icon:<AiOutlineRadiusUpright className='w-[200px] h-[60px] text-indigo-400' />
   },
 ];
@@ -129,12 +129,12 @@ function CSStools1() {
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-semibold text-[#1F2B56] mb-2 break-words">
+              <h3 className="text-center font-semibold text-[#1F2B56] mb-2 break-words">
                 {tool.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">{tool.description}</p>
+              <p className="text-center text-gray-600  mb-8">{tool.description}</p>
 
               {/* Arrow Button */}
               <div className="group absolute bottom-5.5 right-1">

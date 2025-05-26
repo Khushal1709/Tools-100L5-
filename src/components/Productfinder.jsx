@@ -341,7 +341,7 @@ const ProductFinderHero = () => {
             </div>
 
             {/* Category Buttons */}
-            <div className="bg-white ">
+            <div className="bg-white relative z-10 rounded-lg">
               <div
                 className="text-center py-2 bg-white bg-no-repeat bg-center bg-contain mb-10"
                 style={{ backgroundImage: `url(${productback})` }}
@@ -357,7 +357,7 @@ const ProductFinderHero = () => {
                   className="mt-6 px-4 overflow-x-hidden whitespace-nowrap scrollbar-hide"
                   aria-label="Product categories"
                 >
-                  <div className="inline-flex gap-4 min-w-max">
+                  <div className=" inline-flex gap-4 min-w-max ">
                     {categories.map((cat) => {
                       const isActive = cat.id === activeCategory;
                       return (

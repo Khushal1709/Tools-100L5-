@@ -24,6 +24,7 @@ import Imagestools1 from "../Imagestools1/imagestools1";
 import CSStools1 from "../CSStools1/CSStools1";
 import Colortool1 from "../Colortool1/Colortool1";
 import Socialmedia1 from "../Socialmedia1/Socialmedia01";
+import MiscTools1 from "../MiscTools1/MiscTools1";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import firefox from "../image/firefox.svg";
@@ -77,7 +78,6 @@ function Home() {
     { name: "Color Tools", icon: t4 },
     { name: "Social Media Tools", icon: t5 },
     { name: "Miscellaneous Tools", icon: t6 },
-    { name: "Miscellaneous Tools", icon: t6 },
   ];
 
   const scrollRef = useRef(null);
@@ -87,6 +87,7 @@ function Home() {
   const Imagestools1Ref = useRef(null);
   const Colortool1Ref = useRef(null);
   const Socialmedia1Ref = useRef(null);
+  const MiscTools1Ref = useRef(null);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -140,9 +141,13 @@ function Home() {
         behavior: "smooth",
         block: "start",
       });
+    } else if (catName === "Miscellaneous Tools" && MiscTools1Ref.current) {
+      MiscTools1Ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   };
-
 
   return (
     <>
@@ -187,7 +192,7 @@ function Home() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-4">
               <div className="relative inline-flex items-center">
-                <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 sm:px-8 py-2 rounded-full shadow-md whitespace-nowrap" >
+                <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 sm:px-8 py-2 rounded-full shadow-md whitespace-nowrap">
                   EXPLORE TOOL
                 </button>
                 <img
@@ -197,9 +202,10 @@ function Home() {
                 />
               </div>
               <div className="relative inline-flex items-center">
-                <Link to="/Productfinder"><button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 py-2 rounded-full shadow-md whitespace-nowrap cursor-pointer">
-                  PRODUCT FINDER
-                </button>
+                <Link to="/Productfinder">
+                  <button className="bg-gradient-to-r from-[#B8D0FF] to-[#E8D0FF] text-[#14143B] font-bold px-6 py-2 rounded-full shadow-md whitespace-nowrap cursor-pointer">
+                    PRODUCT FINDER
+                  </button>
                 </Link>
                 <img
                   src={finder || "/placeholder.svg"}
@@ -406,7 +412,7 @@ function Home() {
       </div>
 
       {/* ALL TOOLS SECTIONS */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
         <div
           ref={Textool1Ref}
           className="transition-transform duration-700 ease-out opacity-100"
@@ -428,7 +434,9 @@ function Home() {
         <div ref={Socialmedia1Ref}>
           <Socialmedia1 />
         </div>
-        
+        <div ref={MiscTools1Ref}>
+          <MiscTools1 />
+        </div>
       </div>
       <Footer />
     </>

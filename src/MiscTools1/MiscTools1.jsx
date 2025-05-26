@@ -1,7 +1,7 @@
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
-import whishlist from "../image/whishlist.svg"; // wishlist icon
-import whishlist2 from "../image/whishlist2.svg"; // wishlist icon
+import whishlist from "../image/whishlist.svg";
+import whishlist2 from "../image/whishlist2.svg"; 
 import { ImBarcode } from "react-icons/im";
 import { BsQrCode } from "react-icons/bs";
 import { MdOutlineContentPaste, MdShare } from "react-icons/md";
@@ -11,25 +11,25 @@ const tools = [
   {
     title: "Bar Code Generator",
     description:
-      "Convert your text or string to uppercase, lowercase, title case & sentence case",
+      "Generate barcodes for different internatinal standardizations with desired sizes",
      icon: <ImBarcode className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "QR Code Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Generate QR code for your links or texts easily and download them as an image file",
      icon: <BsQrCode className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "List Randomizer",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Randomize your lists, make lotteries, draw campigns or select random people from a group",
      icon: <MdOutlineContentPaste className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "Strong Random Password Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Generate strong random passwords and check its stregth with password strength meter",
      icon: <BiSolidLock className='w-[200px] h-[60px] text-indigo-400'/>,
   },
 ];
@@ -45,7 +45,7 @@ const MiscTools = () => {
           Smart Tools. Simple Solutions.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 cursor-pointer">
           {tools.map((tool, index) => (
             <div
               key={index}
@@ -72,12 +72,12 @@ const MiscTools = () => {
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-semibold text-[#1F2B56] mb-2 break-words">
+              <h3 className="text-center font-semibold text-[#1F2B56] mb-2 break-words">
                 {tool.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">{tool.description}</p>
+              <p className="text-center text-gray-600  mb-8">{tool.description}</p>
 
               {/* Arrow Button */}
               <div className="group absolute bottom-5.5 right-1">

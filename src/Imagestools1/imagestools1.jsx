@@ -117,12 +117,12 @@ function Imagestools1() {
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-semibold text-[#1F2B56] mb-2 break-words">
+              <h3 className="text-center font-semibold text-[#1F2B56] mb-2 break-words">
                 {tool.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">
+              <p className="text-center text-gray-600  mb-8">
                 {tool.description}
               </p>
 

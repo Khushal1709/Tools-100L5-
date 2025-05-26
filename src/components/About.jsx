@@ -268,43 +268,6 @@ export default function About() {
   );
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import React from "react";
 // import search from "../image/search.svg";
 // import leaf1 from "../image/leaf1.svg";
@@ -529,11 +492,6 @@ export default function About() {
 //   );
 // }
 
-
-
-
-
-
 // import React, { useRef, useState } from "react";
 // import { toPng } from "html-to-image";
 // import { saveAs } from "file-saver";
@@ -616,7 +574,6 @@ export default function About() {
 //     };
 
 //     return (
-
 
 //         <div className="max-w-4xl mx-auto p-3">
 //             {/* Header */}

@@ -122,11 +122,8 @@ import Support from "./Support";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import setting from "../image/setting.svg";
 import ston from "../image/ston.svg";
 import Oval2 from "../image/Oval2.svg";
-import search from "../image/search.svg";
-import firefox from "../image/firefox.svg";
 import leaf1 from "../image/leaf1.svg";
 
 const ContactSection = () => {

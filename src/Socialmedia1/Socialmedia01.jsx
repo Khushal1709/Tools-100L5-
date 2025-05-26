@@ -1,4 +1,4 @@
-import React from 'react'
+
 import arrowIcon from "../image/arrowIcon.svg";
 import arrowIcon2 from "../image/arrowIcon2.svg";
 import whishlist from "../image/whishlist.svg"; // wishlist icon
@@ -17,44 +17,44 @@ const tools = [
   {
     title: "Instagram Filters",
     description:
-      "Convert your text or string to uppercase, lowercase, title case & sentence case",
+      "Apply instagram filters to you photos either by uploading local files or uploading image from a URL",
     icon: <MdMovieFilter className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "Instagram Post Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Create Instagram posts as if they were real, download them as an image and make jokes to your friends",
     icon: <MdPostAdd className='w-[200px] h-[60px] text-indigo-400'/>,
   },
 
   {
     title: "Tweet Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Create tweets as if they were real, download them as an image and make jokes to your friends",
     icon: <FaTwitterSquare className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "Twitter Ad Revenue Generator",
     description:
-      "Create your placeholder texts with desired number of paragraphs and properties",
+      "Generate Twitter ad revenue screenshots and make jokes to your friends",
     icon: <FaXTwitter className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "YouTube Thumbnail Grabber",
     description:
-      "Pick any color from an image with an eyedropper and get detailed info about the color you picked",
+      "Get all available thumbnail images of a YouTube videos just by entering the URL",
     icon: <FaYoutube className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "Vimeo Thumbnail Grabber",
     description:
-      "Generate random SVG blobs with desired complexity and get SVG as code or file",
+      "Get all available thumbnail images of a Vimeo videos just by entering the URL",
     icon: <IoLogoVimeo className='w-[200px] h-[60px] text-indigo-400'/>,
   },
   {
     title: "Open Graph Meta Generator",
     description:
-      "Generate SVG patterns with different shapes and download it as SVG or an image file",
+      "Generate open graph meta code for your web page and add it to your site's head section",
     icon: <LuGitGraph className='w-[200px] h-[60px] text-indigo-400'/>,
   },
 ];
@@ -98,12 +98,12 @@ function Socialmedia01() {
               </div>
 
               {/* Title */}
-              <h3 className="text-base font-semibold text-[#1F2B56] mb-2 break-words">
+              <h3 className="text-center font-semibold text-[#1F2B56] mb-2 break-words">
                 {tool.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-600  mb-8">
+              <p className="text-center text-gray-600  mb-8">
                 {tool.description}
               </p>
 

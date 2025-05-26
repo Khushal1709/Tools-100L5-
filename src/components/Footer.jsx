@@ -11,6 +11,8 @@ export default function Footer() {
       behavior: "smooth",
     });
   };
+
+
   return (
     <footer className="relative pt-12 pb-6 overflow-hidden">
       {/* Decorative image at bottom left */}
