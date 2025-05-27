@@ -18,7 +18,6 @@ import search from "../image/search.svg";
 import explore from "../image/explore.svg";
 import finder from "../image/finder.svg";
 import firefox from "../image/firefox.svg";
-import Getleaf from "../image/Getleaf.svg";
 import productback from "../image/productback.svg";
 import Text from "../image/Text.svg";
 import folder from "../image/folder.svg";
